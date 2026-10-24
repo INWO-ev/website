@@ -1,0 +1,37 @@
+{
+  "theme": "dark",
+  "title": "Boden",
+  "status": "entwurf",
+  "statusNote": "[TEXT FOLGT] Alle vier Szenen sind Redaktionsentwürfe aus den Stichpunkten der Spezifikation (Abschnitt 5.3) und müssen von der INWO geprüft und freigegeben werden.",
+  "intro": "Boden ist knapp – und seine Lage entscheidet über seinen Wert. Wer profitiert davon eigentlich?",
+  "scenes": [
+    {
+      "key": "alltag",
+      "title": "Das Alltagsbild",
+      "text": "[TEXT FOLGT] Eine gute Lage – nah an Schule, Bahnhof und Innenstadt – macht ein Grundstück wertvoll. Diesen Wert hat niemand geschaffen, der heute dort wohnt oder vermietet."
+    },
+    {
+      "key": "kehrseite",
+      "title": "Die Kehrseite",
+      "text": "[TEXT FOLGT] Dieser Mehrwert entsteht vor allem durch Gemeinschaftsleistungen: Straßen, Schulen, Sicherheit, Kultur. Bezahlt wird die Infrastruktur trotzdem meist aus Lohn- und Verbrauchssteuern aller."
+    },
+    {
+      "key": "beispiel",
+      "title": "Das Beispiel",
+      "text": "[TEXT FOLGT] Lagebedingte Bodenrenten fließen heute überwiegend privat ab, während die Infrastruktur, die diese Lage erst wertvoll macht, von allen bezahlt wird. [QUELLE ERGÄNZEN] Konkrete Zahlen/Beispiel folgt."
+    },
+    {
+      "key": "loesung",
+      "title": "Die Lösung",
+      "text": "[TEXT FOLGT] Vorschlag der INWO: Boden gehört allen, die Nutzung bleibt weitgehend privat. Infrastruktur wird aus Bodenwertsteuer und Pachteinnahmen statt aus Lohn- und Verbrauchssteuern finanziert."
+    }
+  ],
+  "readMore": {
+    "label": "Ausführliche Begründung zur Bodenreform lesen",
+    "href": "/hefte/bodenreform"
+  },
+  "callRef": {
+    "label": "Zugehöriger Aufruf: Grundsteuer – Zeitgemäß!",
+    "href": "#mitmachen"
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "contact": {
+    "heading": "Kontakt",
+    "email": "[PLATZHALTER] info@freischule.info",
+    "note": "[PLATZHALTER] Postadresse folgt."
+  },
+  "spenden": {
+    "heading": "Spenden",
+    "iban": "[PLATZHALTER – nicht veröffentlichen ohne Freigabe]",
+    "href": "/spenden"
+  },
+  "newsletter": {
+    "heading": "Newsletter",
+    "href": "#mitmachen"
+  },
+  "social": {
+    "heading": "Social",
+    "youtube": "[PLATZHALTER] Kanal-Link folgt"
+  },
+  "links": [
+    { "label": "Presse", "href": "/presse" },
+    { "label": "Impressum", "href": "/impressum" },
+    { "label": "Datenschutz", "href": "/datenschutz" },
+    { "label": "Barrierefreiheit", "href": "/barrierefreiheit" },
+    { "label": "Sitemap", "href": "/sitemap.xml" }
+  ]
+}

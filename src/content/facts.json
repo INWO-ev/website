@@ -1,0 +1,23 @@
+{
+  "zinsanteil-preise": {
+    "label": "Geschätzter Zinsanteil in Produktpreisen",
+    "value": "rund 30–45 %",
+    "kind": "schaetzung",
+    "stand": "2011",
+    "quelle": "monneta / Helmut Creutz, rechnerische Herleitung (unter Ökonomen umstritten)"
+  },
+  "geldgebuehr": {
+    "label": "Vorgeschlagene Geldgebühr",
+    "value": "0,5 % im Monat (6 % im Jahr)",
+    "kind": "vorschlag",
+    "stand": "2026",
+    "quelle": "INWO-Theoriepapier Freigeld"
+  },
+  "zinsgewinner": {
+    "label": "Nettogewinner des Zinssaldos",
+    "value": "oberste rund 10 % der Haushalte (ohne aktuelle Quelle)",
+    "kind": "offen",
+    "stand": "2026",
+    "quelle": "[QUELLE ERGÄNZEN] Bundesbank- bzw. Studiendaten zum Zinssaldo nach Vermögensgruppen fehlen noch"
+  }
+}

@@ -1,0 +1,43 @@
+<button
+  type="button"
+  class="chat-fab"
+  id="chat-fab"
+  aria-label="Frag Gesell öffnen"
+  aria-haspopup="dialog"
+>
+  <span class="chat-fab__avatar" aria-hidden="true">SG</span>
+</button>
+
+<div class="chat-dialog" id="chat-dialog" role="dialog" aria-modal="true" aria-labelledby="chat-dialog-title" hidden>
+  <div class="chat-dialog__panel">
+    <header class="chat-dialog__header">
+      <span class="chat-dialog__avatar" aria-hidden="true">SG</span>
+      <div>
+        <h2 id="chat-dialog-title">Frag Gesell – KI-Assistent</h2>
+        <p class="chat-dialog__disclaimer">{{ chat.disclaimer }}</p>
+      </div>
+      <button type="button" class="chat-dialog__close" id="chat-dialog-close" aria-label="Chat schließen">×</button>
+    </header>
+
+    <div class="chat-dialog__messages" id="chat-messages" role="log" aria-live="polite"></div>
+
+    <div class="chat-dialog__chips">
+      {% for question in chat.suggestedQuestions %}
+      <button type="button" class="chat-chip" data-chat-question="{{ question }}">{{ question }}</button>
+      {% endfor %}
+    </div>
+
+    <form class="chat-dialog__form" id="chat-form">
+      <label class="sr-only" for="chat-input">Deine Frage</label>
+      <input
+        type="text"
+        id="chat-input"
+        name="message"
+        maxlength="500"
+        placeholder="Deine Frage an Gesell..."
+        autocomplete="off"
+      />
+      <button type="submit" class="btn btn--accent">Senden</button>
+    </form>
+  </div>
+</div>

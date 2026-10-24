@@ -1,0 +1,43 @@
+{
+  "name": "inwo-landingpage",
+  "version": "0.1.0",
+  "private": true,
+  "description": "INWO / Fairconomy Landingpage - Phase 1",
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "overrides": {
+    "content-disposition": "^0.5.4",
+    "cookie": "^0.7.2"
+  },
+  "scripts": {
+    "dev": "tsx watch src/server/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/server/index.js",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint \"src/**/*.ts\" \"tests/**/*.ts\"",
+    "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
+  },
+  "dependencies": {
+    "@fastify/static": "^10.1.7",
+    "@fastify/view": "^12.0.1",
+    "dotenv": "^16.4.5",
+    "fastify": "^5.12.7",
+    "mongodb": "^6.9.0",
+    "nunjucks": "^3.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.15",
+    "@types/nunjucks": "^3.2.6",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.0",
+    "prettier": "^3.3.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4",
+    "vitest": "^2.0.5"
+  }
+}

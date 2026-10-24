@@ -1,0 +1,41 @@
+<section id="aktuell" class="section" data-theme="{{ aktuell.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--up">{{ aktuell.title }}</h2>
+
+    <div class="aktuell-grid">
+      <div class="aktuell-col reveal reveal--up">
+        <h3>{{ aktuell.events.heading }}</h3>
+        <ul class="aktuell-list">
+          {% for event in aktuellData.events %}
+          <li>
+            <a href="{{ event.link }}">{{ event.titel }}</a>
+            <span class="aktuell-list__meta">{{ event.start }} · {{ event.ort }}</span>
+          </li>
+          {% endfor %}
+        </ul>
+        <a class="link-more" href="{{ aktuell.events.allHref }}">{{ aktuell.events.allLabel }}</a>
+        <a class="link-more" href="{{ aktuell.events.icalHref }}">Termine abonnieren (iCal)</a>
+      </div>
+
+      <div class="aktuell-col reveal reveal--up">
+        <h3>{{ aktuell.posts.heading }}</h3>
+        <ul class="aktuell-list">
+          {% for post in aktuellData.posts %}
+          <li>
+            <a href="/blog/{{ post.slug }}">{{ post.titel }}</a>
+            <span class="aktuell-list__meta">{{ post.veroeffentlicht_am }}</span>
+            <p>{{ post.teaser }}</p>
+          </li>
+          {% endfor %}
+        </ul>
+        <a class="link-more" href="{{ aktuell.posts.allHref }}">{{ aktuell.posts.allLabel }}</a>
+        <a class="link-more" href="{{ aktuell.posts.rssHref }}">Beiträge abonnieren (RSS)</a>
+      </div>
+
+      <div class="aktuell-col reveal reveal--up">
+        <h3>{{ aktuell.videos.heading }}</h3>
+        <p class="note">{{ aktuell.videos.note }}</p>
+      </div>
+    </div>
+  </div>
+</section>

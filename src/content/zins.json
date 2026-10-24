@@ -1,0 +1,53 @@
+{
+  "theme": "light",
+  "title": "Zins",
+  "status": "entwurf",
+  "intro": "Zinsen betreffen jeden – als Sparer und als Zahler. Ein Blick auf beide Seiten.",
+  "scenes": [
+    {
+      "key": "freude",
+      "title": "Die Freude",
+      "text": "Du hast 100.000 € zusammengespart. Bei 3 % Zinsen sind das 3.000 € im Jahr. Darüber darfst du dich freuen, du hast verzichtet und vorgesorgt. Aber wie weit tragen 3.000 €? Vielleicht zwei Monate."
+    },
+    {
+      "key": "kehrseite",
+      "title": "Die Kehrseite",
+      "text": "Diese Zinsen müssen erst erarbeitet werden, von Unternehmen, Vermietern und Haushalten. Sie werden auf Preise und Mieten aufgeschlagen. Jeder Einkauf und jede Miete enthält einen Zinsanteil."
+    },
+    {
+      "key": "zahl",
+      "title": "Die Zahl",
+      "text": "Schätzungen kommen auf rund ein Drittel Zinsanteil im Durchschnitt der Preise. Per Saldo gewinnen nur die vermögendsten etwa 10 % der Haushalte, alle anderen zahlen drauf, meist ohne es zu merken.",
+      "fact": "zinsanteil-preise",
+      "factSecondary": "zinsgewinner"
+    },
+    {
+      "key": "loesung",
+      "title": "Die Lösung",
+      "text": "Eine Gebühr auf Geld: 0,5 % im Monat, also 6 % im Jahr. Sie fällt nicht an, wenn du dein Geld ausgibst oder als Kredit verleihst. [TEXT FOLGT: Zeile aus „Taler, Taler, du musst wandern“, liefert die INWO]. Durch das größere Kreditangebot würde der Kreditzins nach der Theorie gegen 0 % sinken – und mit ihm die Zinslast in den Preisen.",
+      "fact": "geldgebuehr"
+    }
+  ],
+  "faq": [
+    {
+      "question": "Was passiert mit meinem Ersparten?",
+      "answer": "[TEXT FOLGT] Grundsätzlich bleibt Erspartes Erspartes – die Geldgebühr betrifft das Halten von Bargeld bzw. Sichteinlagen, nicht Sachwerte oder sinnvoll angelegtes/verliehenes Geld. Finale Fassung liefert die INWO."
+    },
+    {
+      "question": "Zahle ich dann 6 % Strafe?",
+      "answer": "[TEXT FOLGT] Es handelt sich nicht um eine Strafe, sondern um eine Umlaufsicherung: Geld soll zirkulieren statt gehortet zu werden. Wer sein Geld ausgibt oder verleiht, zahlt keine Gebühr. Finale Fassung liefert die INWO."
+    },
+    {
+      "question": "Wer bekommt die Gebühr?",
+      "answer": "[TEXT FOLGT] Vorschlag der INWO zur Verwendung der Einnahmen folgt. Finale Fassung liefert die INWO."
+    },
+    {
+      "question": "Hat so etwas schon funktioniert?",
+      "answer": "[TEXT FOLGT] Historische Beispiele und Praxiserfahrungen werden hier mit Quellenangabe ergänzt. Finale Fassung liefert die INWO."
+    }
+  ],
+  "readMore": {
+    "label": "Ausführliche Begründung zur Geldgebühr lesen",
+    "href": "/hefte/geldgebuehr"
+  }
+}

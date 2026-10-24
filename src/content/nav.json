@@ -1,0 +1,23 @@
+{
+  "brand": "Fairconomy",
+  "brandSub": "INWO",
+  "anchors": [
+    { "id": "zins", "label": "Zins" },
+    { "id": "boden", "label": "Boden" },
+    { "id": "zukunft", "label": "Zukunft" },
+    { "id": "inwo", "label": "INWO" },
+    { "id": "aktuell", "label": "Aktuell" }
+  ],
+  "ctaLabel": "Mitmachen",
+  "ctaHref": "#mitmachen",
+  "overlayLinks": [
+    { "label": "Startseite", "href": "/" },
+    { "label": "Blog", "href": "/blog" },
+    { "label": "Veranstaltungen", "href": "/veranstaltungen" },
+    { "label": "Hefte", "href": "/hefte" },
+    { "label": "Glossar", "href": "/glossar" },
+    { "label": "Spenden", "href": "/spenden" },
+    { "label": "Kontakt", "href": "/kontakt" },
+    { "label": "Impressum", "href": "/impressum" }
+  ]
+}

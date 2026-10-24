@@ -1,0 +1,31 @@
+{
+  "theme": "dark",
+  "title": "Weiter entdecken",
+  "intro": "Wer bis hier gescrollt ist, will mehr wissen. Vier weitere Bausteine der Fairconomy.",
+  "tiles": [
+    {
+      "key": "ressourcensteuer",
+      "title": "Ressourcensteuer / Ressourcen-Dividende",
+      "text": "[TEXT FOLGT] Kurzbeschreibung folgt.",
+      "href": "/themen/ressourcensteuer"
+    },
+    {
+      "key": "jobgarantie",
+      "title": "Jobgarantie als Sozialhilfe",
+      "text": "[TEXT FOLGT] Kurzbeschreibung folgt.",
+      "href": "/themen/jobgarantie"
+    },
+    {
+      "key": "freischulen",
+      "title": "Freischulen",
+      "text": "[TEXT FOLGT] Weiterentwicklung der Freikonditorei – Kurzbeschreibung folgt.",
+      "href": "/themen/freischulen"
+    },
+    {
+      "key": "handelsbilanz",
+      "title": "Ausgeglichene Handelsbilanz",
+      "text": "[TEXT FOLGT] Kurzbeschreibung zum Bancor-Konzept folgt.",
+      "href": "/themen/handelsbilanz"
+    }
+  ]
+}

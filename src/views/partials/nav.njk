@@ -1,0 +1,48 @@
+<header class="site-nav" id="site-nav" data-nav-theme="dark">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="/">
+      <span class="site-nav__brand-main">{{ nav.brand }}</span>
+      <span class="site-nav__brand-sub">{{ nav.brandSub }}</span>
+    </a>
+
+    <nav class="site-nav__anchors" aria-label="Abschnitte dieser Seite">
+      <ul>
+        {% for anchor in nav.anchors %}
+        <li><a href="#{{ anchor.id }}" data-anchor="{{ anchor.id }}">{{ anchor.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-nav__actions">
+      <div class="site-nav__lang" role="group" aria-label="Sprache wählen">
+        <a href="/" lang="de" aria-current="true">DE</a>
+        <span aria-hidden="true">|</span>
+        <a href="/en/" lang="en">EN</a>
+      </div>
+      <a class="btn btn--accent site-nav__cta" href="{{ nav.ctaHref }}">{{ nav.ctaLabel }}</a>
+      <button
+        type="button"
+        class="hamburger"
+        id="hamburger-toggle"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+        aria-controls="overlay-menu"
+      >
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+        <span class="hamburger__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="overlay-menu" id="overlay-menu" hidden>
+  <div class="overlay-menu__inner" role="dialog" aria-modal="true" aria-label="Hauptmenü">
+    <button type="button" class="overlay-menu__close" id="overlay-menu-close" aria-label="Menü schließen">×</button>
+    <ul>
+      {% for link in nav.overlayLinks %}
+      <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "theme": "light",
+  "title": "Zukunft",
+  "status": "entwurf",
+  "sourceNote": "Gekürzte und sprachlich geglättete Fassung von „Eine freie Welt mit Fairconomy“ (material/Eine freie Welt.txt). Tippfehler des Ausgangstexts korrigiert, Tonalität für Erstbesucher bewusst sachlicher gewählt (Annahme, siehe docs/OFFENE_PUNKTE.md Punkt 6) – der Originalton bleibt in den Heften erhalten.",
+  "intro": "Ein kleiner Ausflug in die Zukunft: Wie sähe eine Welt mit gerechter Bodennutzung, fließendem Geld und einer stabilen Währungsordnung aus? Die INWO nennt diese erstrebenswerte Zukunft Fairconomy – Erdenschätze dienen allen, Außensalden sind ausgeglichen, Geld fließt gleichmäßig um, Boden wird gerecht genutzt.",
+  "stations": [
+    {
+      "key": "boden",
+      "title": "Boden",
+      "text": "Grund und Boden gehören der Allgemeinheit, genutzt wird er weiterhin privat. Lagebedingte Bodenrenten entstehen vor allem durch Gemeinschaftsleistungen wie Straßen, Schulen und Sicherheit. Statt aus Lohn- und Verbrauchssteuern finanziert sich Infrastruktur deshalb aus Bodenwertsteuer und Pachteinnahmen.",
+      "link": { "label": "Hintergrund zur Bodenreform lesen", "href": "/hefte/bodenreform" }
+    },
+    {
+      "key": "ressourcen",
+      "title": "Erde und Ressourcen",
+      "text": "Auch Bodenschätze, Gewässer und Luft gehören der Allgemeinheit und werden gemeinsam geschützt. Erträge aus Rohstoffnutzung und Verschmutzungsrechten – die Ressourcen-Dividende – werden pro Kopf zurückverteilt. Offene Standards sichern allen einen günstigen, transparenten Zugang zur digitalen Infrastruktur.",
+      "link": { "label": "Hintergrund zur Ressourcen-Dividende lesen", "href": "/hefte/ressourcendividende" }
+    },
+    {
+      "key": "geld",
+      "title": "Fließendes Geld",
+      "text": "Eine Gebühr auf das Halten von Geld sorgt für mehr Stabilität an den Finanzmärkten und baut übermäßige Geldvermögen und Schulden ab. Einseitige Vermögensgewinne allein aus Zins und Rendite verlieren an Bedeutung, Arbeit und Leistung lohnen sich wieder stärker.",
+      "link": { "label": "Hintergrund zur Geldgebühr lesen", "href": "/hefte/geldgebuehr" }
+    },
+    {
+      "key": "aussenwirtschaft",
+      "title": "Außenwirtschaft und Bancor",
+      "text": "Ein Verbot von Fremdwährungsschulden und begrenzte Auslandsvermögen sorgen für außenwirtschaftliche Stabilität. Der Bancor, eine zinsfreie internationale Verrechnungswährung nach Vorarbeiten von John Maynard Keynes, gleicht Leistungsbilanzen aus und verringert die Abhängigkeit einzelner Staaten von einer einzelnen Weltwährung.",
+      "link": { "label": "Hintergrund zum Bancor lesen", "href": "/hefte/bancor" }
+    }
+  ],
+  "schluss": {
+    "title": "Aufbruch in ein Neues Morgen",
+    "text": "Hat dir dieser kleine Ausflug gefallen? Das System wandelt sich nicht von selbst – dafür braucht es Menschen wie dich. Informiere dich, unterstütze die INWO, werde Fördermitglied oder arbeite aktiv mit: Auf dich kommt es an.",
+    "cta": { "label": "Jetzt mitmachen", "href": "#mitmachen" }
+  }
+}

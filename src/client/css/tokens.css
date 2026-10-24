@@ -1,0 +1,48 @@
+/* Design tokens from spec section 2.1. Two gradient variants are kept as
+   CSS variables until the INWO confirms which one is correct (see
+   docs/OFFENE_PUNKTE.md #1). --inwo-gradient (the literal spec value) is
+   the active default. */
+:root {
+  --inwo-blue-1: #04519b;
+  --inwo-blue-2: #033c73;
+  --inwo-blue-3: #02325f;
+  --inwo-gradient: linear-gradient(#04519b, #033c73 100%, #02325f);
+  --inwo-gradient-3stufig: linear-gradient(#04519b, #033c73 50%, #02325f);
+  --accent: #e8452c;
+  --accent-contrast: #ffffff;
+  --text-on-dark: #ffffff;
+  --text-on-light: #1a1f26;
+  --surface: #f5f7fa;
+  --surface-alt: #ffffff;
+
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-heading: var(--font-body);
+
+  --nav-height: 72px;
+  --max-text-width: 70ch;
+  --radius: 0.5rem;
+
+  --motion-duration: 600ms;
+  --motion-easing: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  scroll-padding-top: var(--nav-height);
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+[data-theme='dark'] {
+  background: var(--inwo-gradient);
+  color: var(--text-on-dark);
+}
+
+[data-theme='light'] {
+  background: var(--surface);
+  color: var(--text-on-light);
+}

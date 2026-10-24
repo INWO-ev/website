@@ -1,0 +1,22 @@
+[
+  {
+    "id": "evt-platzhalter-1",
+    "titel": "[PLATZHALTER] Regionaltreffen Fairconomy",
+    "start": "2026-11-14T18:00:00+01:00",
+    "ende": "2026-11-14T20:00:00+01:00",
+    "ort": "online",
+    "link": "/veranstaltungen/evt-platzhalter-1",
+    "beschreibung": "[TEXT FOLGT] Beschreibung folgt, sobald echte Termine vorliegen.",
+    "status": "entwurf"
+  },
+  {
+    "id": "evt-platzhalter-2",
+    "titel": "[PLATZHALTER] Vortrag: Geldordnung verstehen",
+    "start": "2026-12-02T19:00:00+01:00",
+    "ende": "2026-12-02T20:30:00+01:00",
+    "ort": "[PLATZHALTER] Veranstaltungsort",
+    "link": "/veranstaltungen/evt-platzhalter-2",
+    "beschreibung": "[TEXT FOLGT] Beschreibung folgt, sobald echte Termine vorliegen.",
+    "status": "entwurf"
+  }
+]

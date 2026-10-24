@@ -1,0 +1,48 @@
+{
+  "disclaimer": "KI-Prototyp. Antworten beruhen auf Texten der INWO und auf Gesells Schriften und können Fehler enthalten.",
+  "fallback": "Das kann der Prototyp noch nicht beantworten. Bitte nutze die Beispielfragen oder wende dich über die Kontaktseite an die INWO.",
+  "entries": [
+    {
+      "id": "freigeld",
+      "keywords": ["freigeld", "geldgebühr", "geldgebuhr", "umlaufsicherung"],
+      "question": "Was ist Freigeld?",
+      "answer": "Freigeld ist Silvio Gesells Vorschlag, auf das Halten von Geld eine kleine Gebühr zu erheben (0,5 % im Monat, 6 % im Jahr), damit Geld in Umlauf bleibt statt gehortet zu werden. Eine abschließende Bewertung ersetzt dies nicht.",
+      "source": "Spezifikation Abschnitt 5.2 / Silvio Gesell, Die natürliche Wirtschaftsordnung"
+    },
+    {
+      "id": "bodenreform",
+      "keywords": ["boden", "bodenreform", "freiland", "grundsteuer"],
+      "question": "Warum Bodenreform?",
+      "answer": "Die INWO schlägt vor, dass Boden der Allgemeinheit gehört, die Nutzung aber weitgehend privat bleibt. Lagebedingte Bodenrenten sollen über eine Bodenwertsteuer und Pachteinnahmen der Gemeinschaft zugutekommen, die sie durch Infrastruktur erst geschaffen hat.",
+      "source": "Spezifikation Abschnitt 5.3"
+    },
+    {
+      "id": "bancor",
+      "keywords": ["bancor", "aussenwirtschaft", "außenwirtschaft", "keynes", "handelsbilanz"],
+      "question": "Was ist der Bancor?",
+      "answer": "Der Bancor ist eine von John Maynard Keynes vorgeschlagene zinsfreie internationale Verrechnungswährung. Die INWO greift die Idee auf, um Leistungsbilanzen auszugleichen und einseitige Abhängigkeiten von einzelnen Weltwährungen zu verringern.",
+      "source": "Spezifikation Abschnitt 5.4"
+    },
+    {
+      "id": "mitmachen",
+      "keywords": ["mitmachen", "mitglied", "fördermitglied", "foerdermitglied", "beitreten"],
+      "question": "Wie kann ich mitmachen?",
+      "answer": "Du kannst Fördermitglied werden, dich in Regionalgruppen vernetzen oder in Arbeitsgruppen aktiv mitarbeiten. Alle drei Wege findest du im Abschnitt „Mitmachen“ dieser Seite.",
+      "source": "Spezifikation Abschnitt 5.9"
+    },
+    {
+      "id": "zinskritik",
+      "keywords": ["zins", "zinsen", "zinskritik"],
+      "question": "Warum kritisiert die INWO Zinsen?",
+      "answer": "Nach Einschätzung der INWO steckt ein erheblicher, aber umstrittener Anteil der Produktpreise rechnerisch in Zinskosten. Die Geldgebühr soll diesen Anteil über sinkende Kreditzinsen senken – das ist eine Erwartung der Theorie, kein belegtes Faktum.",
+      "source": "Spezifikation Abschnitt 6 (Faktenprüfung)"
+    },
+    {
+      "id": "gesell-person",
+      "keywords": ["silvio gesell", "wer war gesell", "gesell person"],
+      "question": "Wer war Silvio Gesell?",
+      "answer": "Silvio Gesell (1862–1930) war Kaufmann und Wirtschaftstheoretiker und Begründer der Freiwirtschaftslehre. Dieser Prototyp spricht über ihn und seine Schriften, nicht in seiner Ich-Form.",
+      "source": "Silvio Gesell, Die natürliche Wirtschaftsordnung"
+    }
+  ]
+}

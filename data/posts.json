@@ -1,0 +1,22 @@
+[
+  {
+    "id": "post-platzhalter-1",
+    "titel": "[PLATZHALTER] Willkommen auf der neuen Fairconomy-Seite",
+    "slug": "willkommen-neue-seite",
+    "teaser": "[TEXT FOLGT] Anreißertext folgt, sobald redaktionelle Beiträge vorliegen.",
+    "bild": null,
+    "autor": "[PLATZHALTER]",
+    "veroeffentlicht_am": "2026-10-20",
+    "status": "entwurf"
+  },
+  {
+    "id": "post-platzhalter-2",
+    "titel": "[PLATZHALTER] Was ist eigentlich eine Geldgebühr?",
+    "slug": "was-ist-eine-geldgebuehr",
+    "teaser": "[TEXT FOLGT] Anreißertext folgt, sobald redaktionelle Beiträge vorliegen.",
+    "bild": null,
+    "autor": "[PLATZHALTER]",
+    "veroeffentlicht_am": "2026-10-10",
+    "status": "entwurf"
+  }
+]

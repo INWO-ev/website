@@ -1,0 +1,15 @@
+<section id="mehr" class="section" data-theme="{{ mehr.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--up">{{ mehr.title }}</h2>
+    <p class="section__intro reveal reveal--up">{{ mehr.intro }}</p>
+
+    <div class="tile-grid">
+      {% for tile in mehr.tiles %}
+      <a class="tile reveal reveal--up" href="{{ tile.href }}">
+        <h3>{{ tile.title }}</h3>
+        <p>{{ tile.text }}</p>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

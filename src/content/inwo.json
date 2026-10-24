@@ -1,0 +1,34 @@
+{
+  "theme": "dark",
+  "title": "INWO",
+  "status": "entwurf",
+  "intro": "[TEXT FOLGT] Die INWO (Initiative für Natürliche Wirtschaftsordnung) setzt sich seit Jahrzehnten für eine Geld- und Bodenordnung nach den Ideen Silvio Gesells ein. Wer wir sind, was wir wollen, wie wir arbeiten und wie wir uns finanzieren – ausführliche, von der INWO freigegebene Fassung folgt.",
+  "pitchVideo": {
+    "status": "entscheidung-offen",
+    "label": "Film ansehen",
+    "note": "[ENTSCHEIDUNG] Pitch-Video (60–90s) startet erst per Klick, mit Untertiteln. Hosting (selbst gehostet oder YouTube Zwei-Klick-Lösung) und Drehbuch stehen noch aus.",
+    "transcriptHref": "/transkripte/pitch-video"
+  },
+  "theories": [
+    {
+      "key": "freigeld",
+      "title": "Freigeld",
+      "text": "[TEXT FOLGT] Kurztext zur Geldreform liegt bei der INWO vor und wird hier eingefügt."
+    },
+    {
+      "key": "freiland",
+      "title": "Freiland",
+      "text": "[TEXT FOLGT] Kurztext zur Bodenreform liegt bei der INWO vor und wird hier eingefügt."
+    },
+    {
+      "key": "aussenwirtschaft",
+      "title": "Ausgeglichene Außenwirtschaft",
+      "text": "[TEXT FOLGT] Kurztext zu Bancor und Leistungsbilanzen liegt bei der INWO vor und wird hier eingefügt."
+    },
+    {
+      "key": "ressourcen",
+      "title": "Ressourcen-Dividende",
+      "text": "[TEXT FOLGT] Kurztext zur Ressourcennutzung liegt bei der INWO vor und wird hier eingefügt."
+    }
+  ]
+}

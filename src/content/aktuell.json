@@ -1,0 +1,20 @@
+{
+  "theme": "light",
+  "title": "Aktuell",
+  "events": {
+    "heading": "Veranstaltungen",
+    "allLabel": "Alle Termine",
+    "allHref": "/veranstaltungen",
+    "icalHref": "/veranstaltungen.ics"
+  },
+  "posts": {
+    "heading": "Neueste Beiträge",
+    "allLabel": "Alle Beiträge",
+    "allHref": "/blog",
+    "rssHref": "/blog/feed.xml"
+  },
+  "videos": {
+    "heading": "YouTube",
+    "note": "[TEXT FOLGT] Liste der Kanäle und Channel-IDs liegt noch nicht vor. Einbindung erfolgt als Zwei-Klick-Lösung (siehe Datenschutzkonzept)."
+  }
+}

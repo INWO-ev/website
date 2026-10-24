@@ -1,0 +1,21 @@
+<section id="inwo" class="section" data-theme="{{ inwo.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--up">{{ inwo.title }}</h2>
+    <p class="section__intro reveal reveal--up">{{ inwo.intro }}</p>
+
+    <div class="pitch-video reveal reveal--up">
+      <button type="button" class="btn btn--ghost" id="pitch-video-trigger">{{ inwo.pitchVideo.label }}</button>
+      <p class="note note--on-dark">{{ inwo.pitchVideo.note }}</p>
+      <a class="link-more" href="{{ inwo.pitchVideo.transcriptHref }}">Transkript lesen</a>
+    </div>
+
+    <div class="theory-cards">
+      {% for theory in inwo.theories %}
+      <article class="theory-card reveal reveal--up">
+        <h3>{{ theory.title }}</h3>
+        <p>{{ theory.text }}</p>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

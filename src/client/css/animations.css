@@ -1,0 +1,37 @@
+/* Progressive enhancement: content is visible by default (no-JS / spec
+   section 4 requirement). Only once JS has loaded (html.js) do we hide
+   elements prior to reveal, and only transform/opacity are animated. */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+html.js .reveal {
+  opacity: 0;
+  transition: opacity var(--motion-duration) var(--motion-easing),
+    transform var(--motion-duration) var(--motion-easing);
+}
+
+html.js .reveal--up {
+  transform: translateY(24px);
+}
+
+html.js .reveal--left {
+  transform: translateX(-24px);
+}
+
+html.js .reveal--fade {
+  transform: none;
+}
+
+html.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .reveal {
+    transition: opacity 150ms linear;
+    transform: none;
+  }
+}

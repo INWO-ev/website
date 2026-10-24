@@ -1,0 +1,19 @@
+{
+  "theme": "light",
+  "title": "Stimmen",
+  "enabled": false,
+  "disabledNote": "Dieser Abschnitt ist per Feature-Flag deaktiviert (enabled: false), bis echte Stimmen mit Einwilligung (DSGVO, Bildrechte) vorliegen. Siehe Spezifikation Abschnitt 5.6: keine Dummy-Zitate veröffentlichen.",
+  "intro": "Warum ich in der INWO bin.",
+  "testimonials": [
+    {
+      "name": "[BEISPIEL – nicht veröffentlichen]",
+      "quote": "[TEXT FOLGT] Platzhalter für ein echtes Zitat mit Einwilligung.",
+      "photo": null
+    },
+    {
+      "name": "[BEISPIEL – nicht veröffentlichen]",
+      "quote": "[TEXT FOLGT] Platzhalter für ein echtes Zitat mit Einwilligung.",
+      "photo": null
+    }
+  ]
+}

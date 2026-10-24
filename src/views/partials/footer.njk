@@ -1,0 +1,30 @@
+<footer class="site-footer" data-theme="dark">
+  <div class="site-footer__inner">
+    <div class="site-footer__col">
+      <h2>{{ footer.contact.heading }}</h2>
+      <p>{{ footer.contact.email }}</p>
+      <p>{{ footer.contact.note }}</p>
+    </div>
+    <div class="site-footer__col">
+      <h2>{{ footer.spenden.heading }}</h2>
+      <p>{{ footer.spenden.iban }}</p>
+      <a href="{{ footer.spenden.href }}">Zur Spendenseite</a>
+    </div>
+    <div class="site-footer__col">
+      <h2>{{ footer.newsletter.heading }}</h2>
+      <a href="{{ footer.newsletter.href }}">Jetzt abonnieren</a>
+    </div>
+    <div class="site-footer__col">
+      <h2>{{ footer.social.heading }}</h2>
+      <p>{{ footer.social.youtube }}</p>
+    </div>
+  </div>
+  <nav class="site-footer__links" aria-label="Rechtliches und weitere Seiten">
+    <ul>
+      {% for link in footer.links %}
+      <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <p class="site-footer__copyright">&copy; 2026 INWO – Initiative für Natürliche Wirtschaftsordnung</p>
+</footer>

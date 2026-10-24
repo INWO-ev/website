@@ -1,0 +1,48 @@
+<section id="mitmachen" class="section" data-theme="{{ mitmachen.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--up">{{ mitmachen.title }}</h2>
+    <p class="section__intro reveal reveal--up">{{ mitmachen.intro }}</p>
+
+    <div class="path-cards">
+      {% for path in mitmachen.paths %}
+      <article class="path-card reveal reveal--up">
+        <h3>{{ path.title }}</h3>
+        <p>{{ path.text }}</p>
+        <a class="btn btn--ghost" href="{{ path.cta.href }}">{{ path.cta.label }}</a>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="call-cards">
+      {% for call in mitmachen.calls %}
+      <article class="call-card reveal reveal--up">
+        <h3>{{ call.title }}</h3>
+        <p>{{ call.text }}</p>
+        <button type="button" class="btn btn--accent" disabled>{{ call.ctaLabel }}</button>
+      </article>
+      {% endfor %}
+    </div>
+
+    <div class="mitmachen-forms">
+      <form class="newsletter-form reveal reveal--up" id="newsletter-form">
+        <h3>{{ mitmachen.newsletter.title }}</h3>
+        <p class="note note--on-dark">{{ mitmachen.newsletter.note }}</p>
+        <label class="sr-only" for="newsletter-email">E-Mail-Adresse</label>
+        <input type="email" id="newsletter-email" name="email" required placeholder="{{ mitmachen.newsletter.placeholder }}" />
+        <button type="submit" class="btn btn--accent">{{ mitmachen.newsletter.submitLabel }}</button>
+      </form>
+
+      <div class="foerdermitglied reveal reveal--up">
+        <h3>{{ mitmachen.foerdermitglied.title }}</h3>
+        <p class="note note--on-dark">{{ mitmachen.foerdermitglied.note }}</p>
+        <a class="btn btn--ghost" href="{{ mitmachen.foerdermitglied.ctaHref }}">{{ mitmachen.foerdermitglied.ctaLabel }}</a>
+      </div>
+
+      <div class="spenden-hinweis reveal reveal--up">
+        <h3>{{ mitmachen.spenden.title }}</h3>
+        <p class="note note--on-dark">{{ mitmachen.spenden.note }}</p>
+        <a class="btn btn--ghost" href="{{ mitmachen.spenden.ctaHref }}">{{ mitmachen.spenden.ctaLabel }}</a>
+      </div>
+    </div>
+  </div>
+</section>

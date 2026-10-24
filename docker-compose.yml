@@ -1,0 +1,26 @@
+services:
+  app:
+    build: .
+    ports:
+      - '3011:3011'
+    environment:
+      - PORT=3011
+      - HOST=0.0.0.0
+      - SITE_URL=${SITE_URL:-https://www.freischule.info}
+      - MONGODB_URI=mongodb://mongo:27017/inwo
+    depends_on:
+      - mongo
+
+  # SECURITY: no authentication configured and the port is published to the
+  # host. Fine for local development only. Before any shared/staging/prod
+  # deployment, set MONGO_INITDB_ROOT_USERNAME/PASSWORD, require auth, and
+  # remove the published port (keep Mongo on the internal compose network).
+  mongo:
+    image: mongo:7
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

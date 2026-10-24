@@ -1,0 +1,69 @@
+{
+  "theme": "dark",
+  "title": "Mitmachen",
+  "intro": "Drei Wege, aktiv zu werden – such dir deinen aus.",
+  "paths": [
+    {
+      "key": "verstehen",
+      "title": "Ich bin neu und will verstehen",
+      "text": "Einführung, Hefte und das Pitch-Video geben dir den Überblick.",
+      "cta": { "label": "Einführung entdecken", "href": "#inwo" }
+    },
+    {
+      "key": "vernetzen",
+      "title": "Ich kenne Gesell und will mich vernetzen",
+      "text": "Veranstaltungen, Regionalgruppen und der Newsletter halten dich auf dem Laufenden.",
+      "cta": { "label": "Veranstaltungen ansehen", "href": "#aktuell" }
+    },
+    {
+      "key": "mitarbeiten",
+      "title": "Ich will aktiv mitarbeiten",
+      "text": "Kontakt, Arbeitsgruppen und Fördermitgliedschaft – wir freuen uns auf dich.",
+      "cta": { "label": "Kontakt aufnehmen", "href": "/kontakt" }
+    }
+  ],
+  "calls": [
+    {
+      "key": "haltegebuehr",
+      "title": "Eine stabile Währung durch Haltegebühr auf Geld",
+      "text": "[TEXT FOLGT] Gekürzte Fassung des Aufrufs folgt.",
+      "ctaLabel": "Unterstützen"
+    },
+    {
+      "key": "grundsteuer",
+      "title": "Grundsteuer: Zeitgemäß!",
+      "text": "[TEXT FOLGT] Gekürzte Fassung des Aufrufs folgt.",
+      "ctaLabel": "Unterstützen"
+    },
+    {
+      "key": "co2-abgabe",
+      "title": "Sozialverträgliche CO₂-Abgabe",
+      "text": "[TEXT FOLGT] Gekürzte Fassung des Aufrufs folgt – Pro-Kopf-Rückverteilung der Einnahmen.",
+      "ctaLabel": "Unterstützen"
+    },
+    {
+      "key": "sicherheitspolitik",
+      "title": "Sicherheit neu denken",
+      "text": "[TEXT FOLGT] Gekürzte Fassung des Aufrufs zur zivilen Sicherheitspolitik folgt.",
+      "ctaLabel": "Unterstützen"
+    }
+  ],
+  "newsletter": {
+    "title": "Newsletter abonnieren",
+    "note": "Double-Opt-in. Du bekommst eine Bestätigungsmail, bevor du etwas von uns erhältst.",
+    "placeholder": "deine@email.de",
+    "submitLabel": "Abonnieren"
+  },
+  "foerdermitglied": {
+    "title": "Fördermitglied werden",
+    "note": "[ENTSCHEIDUNG] Formular wird in Phase 3 an die Mitgliederverwaltung angebunden. Bis dahin führt der Button zur Kontaktseite.",
+    "ctaLabel": "Fördermitglied werden",
+    "ctaHref": "/kontakt?thema=foerdermitgliedschaft"
+  },
+  "spenden": {
+    "title": "Spenden",
+    "note": "[PLATZHALTER] IBAN und Bankverbindung folgen – bitte nicht ohne Freigabe der INWO veröffentlichen.",
+    "ctaLabel": "Zur Spendenseite",
+    "ctaHref": "/spenden"
+  }
+}

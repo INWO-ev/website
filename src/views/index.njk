@@ -1,0 +1,22 @@
+{% extends "layout.njk" %}
+{% block content %}
+{% set hero = sections.hero %}
+{% set zins = sections.zins %}
+{% set boden = sections.boden %}
+{% set zukunft = sections.zukunft %}
+{% set inwo = sections.inwo %}
+{% set stimmen = sections.stimmen %}
+{% set aktuell = sections.aktuell %}
+{% set mehr = sections.mehr %}
+{% set mitmachen = sections.mitmachen %}
+
+{% include "partials/sections/hero.njk" %}
+{% include "partials/sections/zins.njk" %}
+{% include "partials/sections/boden.njk" %}
+{% include "partials/sections/zukunft.njk" %}
+{% include "partials/sections/inwo.njk" %}
+{% include "partials/sections/stimmen.njk" %}
+{% include "partials/sections/aktuell.njk" %}
+{% include "partials/sections/mehr.njk" %}
+{% include "partials/sections/mitmachen.njk" %}
+{% endblock %}

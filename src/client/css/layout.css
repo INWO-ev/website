@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--text-on-light);
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--accent);
+  color: var(--accent-contrast);
+  padding: 0.75rem 1rem;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Scroll progress bar, spec section 3.3 */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  z-index: 1100;
+  background: transparent;
+}
+
+.scroll-progress__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-progress__bar {
+    animation: grow-progress linear;
+    animation-timeline: scroll(root);
+    width: 100%;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes grow-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Fixed site navigation, spec section 3.1 */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: var(--nav-height);
+  background: transparent;
+  transition: background 200ms ease, box-shadow 200ms ease;
+}
+
+.site-nav.is-scrolled {
+  background: var(--inwo-gradient);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.site-nav__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  color: var(--text-on-dark);
+}
+
+.site-nav__brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.site-nav__brand-main {
+  font-size: 1.25rem;
+}
+
+.site-nav__brand-sub {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.site-nav__anchors ul {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav__anchors a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav__anchors a[aria-current='true'] {
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 3px;
+}
+
+.site-nav__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav__lang {
+  display: flex;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.site-nav__lang a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+}
+
+@media (max-width: 900px) {
+  .site-nav__anchors {
+    display: none;
+  }
+}
+
+/* Hamburger, spec section 3.2 */
+.hamburger {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.hamburger__bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-on-dark);
+  transition: background 200ms ease;
+}
+
+.site-nav[data-nav-theme='light'] .hamburger__bar {
+  background: var(--inwo-blue-1);
+}
+
+.site-nav[data-nav-theme='dark'] .hamburger__bar {
+  background: var(--text-on-dark);
+}
+
+/* Overlay menu */
+.overlay-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  background: var(--inwo-blue-2);
+  color: var(--text-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay-menu[hidden] {
+  display: none;
+}
+
+.overlay-menu__inner {
+  text-align: center;
+  position: relative;
+}
+
+.overlay-menu__inner ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.5rem;
+}
+
+.overlay-menu__inner a {
+  color: var(--text-on-dark);
+  text-decoration: none;
+}
+
+.overlay-menu__close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  color: var(--text-on-dark);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 0;
+}
+
+.section__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section__intro,
+.section--hero__intro,
+.scene p,
+.station p {
+  max-width: var(--max-text-width);
+}
+
+.section--hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.section--hero__inner {
+  max-width: 800px;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.section--hero__subline {
+  font-size: 1.25rem;
+  opacity: 0.9;
+}
+
+.cta-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+/* Footer, spec section 3.4 */
+.site-footer {
+  padding: 3rem 0 1.5rem;
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.site-footer__col h2 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer__links ul {
+  max-width: 1200px;
+  margin: 2rem auto 0;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+}
+
+.site-footer__links a {
+  color: var(--text-on-dark);
+}
+
+.site-footer__copyright {
+  text-align: center;
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: 2.5rem 0;
+  }
+}

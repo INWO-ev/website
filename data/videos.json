@@ -1,0 +1,11 @@
+[
+  {
+    "id": "video-platzhalter-1",
+    "kanal": "[PLATZHALTER] Kanalname folgt",
+    "videoId": null,
+    "titel": "[TEXT FOLGT] Noch kein Video verknüpft – Channel-IDs liegen nicht vor (siehe Spezifikation Abschnitt 5.7)",
+    "veroeffentlicht_am": null,
+    "thumbnail": null,
+    "status": "entwurf"
+  }
+]

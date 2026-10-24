@@ -1,0 +1,24 @@
+<section id="zukunft" class="section" data-theme="{{ zukunft.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--fade">{{ zukunft.title }}</h2>
+    <p class="section__intro reveal reveal--fade">{{ zukunft.intro }}</p>
+
+    <ol class="station-list">
+      {% for station in zukunft.stations %}
+      <li class="station reveal reveal--fade">
+        <h3>{{ station.title }}</h3>
+        <p>{{ station.text }}</p>
+        <a class="link-more" href="{{ station.link.href }}">{{ station.link.label }}</a>
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="station-schluss reveal reveal--fade">
+      <h3>{{ zukunft.schluss.title }}</h3>
+      <p>{{ zukunft.schluss.text }}</p>
+      <a class="btn btn--accent" href="{{ zukunft.schluss.cta.href }}">{{ zukunft.schluss.cta.label }}</a>
+    </div>
+
+    <p class="note">{{ zukunft.sourceNote }}</p>
+  </div>
+</section>

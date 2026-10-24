@@ -1,0 +1,39 @@
+<section id="zins" class="section" data-theme="{{ zins.theme }}">
+  <div class="section__inner">
+    <h2 class="reveal reveal--up">{{ zins.title }}</h2>
+    <p class="section__intro reveal reveal--up">{{ zins.intro }}</p>
+
+    <ol class="scene-list">
+      {% for scene in zins.scenes %}
+      <li class="scene reveal reveal--up">
+        <h3>{{ scene.title }}</h3>
+        <p>{{ scene.text }}</p>
+        {% if scene.fact %}
+        <p class="fact-footnote">
+          {{ facts[scene.fact].label }}: {{ facts[scene.fact].value }}
+          (Stand {{ facts[scene.fact].stand }}, Quelle: {{ facts[scene.fact].quelle }})
+        </p>
+        {% endif %}
+        {% if scene.factSecondary %}
+        <p class="fact-footnote">
+          {{ facts[scene.factSecondary].label }}: {{ facts[scene.factSecondary].value }}
+          (Stand {{ facts[scene.factSecondary].stand }}, Quelle: {{ facts[scene.factSecondary].quelle }})
+        </p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ol>
+
+    <div class="faq reveal reveal--up">
+      <h3>Häufige Fragen</h3>
+      {% for item in zins.faq %}
+      <details class="faq__item">
+        <summary>{{ item.question }}</summary>
+        <p>{{ item.answer }}</p>
+      </details>
+      {% endfor %}
+    </div>
+
+    <a class="link-more" href="{{ zins.readMore.href }}">{{ zins.readMore.label }}</a>
+  </div>
+</section>
