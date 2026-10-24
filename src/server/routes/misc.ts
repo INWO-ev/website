@@ -1,6 +1,6 @@
 import { FastifyInstance } from 'fastify';
 
-const SITE_URL = process.env.SITE_URL ?? 'https://www.freischule.info';
+const SITE_URL = process.env.SITE_URL ?? 'https://inwo.example';
 
 const STATIC_PATHS = [
   '/',

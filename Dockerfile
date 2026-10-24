@@ -16,5 +16,5 @@ COPY --from=build /app/src/content ./src/content
 COPY --from=build /app/src/client ./src/client
 COPY --from=build /app/public ./public
 COPY --from=build /app/data ./data
-EXPOSE 3011
+EXPOSE 4100
 CMD ["node", "dist/server/index.js"]

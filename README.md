@@ -32,7 +32,7 @@ Phasen (Spezifikation Abschnitt 12).
 ```bash
 npm install
 cp .env.example .env
-npm run dev        # Dev-Server mit Live-Reload auf http://localhost:3011
+npm run dev        # Dev-Server mit Live-Reload auf http://localhost:4100
 ```
 
 ### Mit Docker Compose
