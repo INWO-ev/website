@@ -4,3 +4,9 @@ dist/
 *.log
 coverage/
 .DS_Store
+
+# Raw source material (spec docs, ODT, unprocessed Pexels videos/images).
+# Only the processed/optimized assets actually used by the site belong in
+# public/ or src/, never this folder - some of these files are hundreds of
+# MB and would bloat the repo.
+material/

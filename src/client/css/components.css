@@ -198,9 +198,16 @@
   border: none;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  padding: 0;
 }
 
 .chat-fab__avatar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   font-weight: 700;
 }
 
@@ -242,9 +249,8 @@
   height: 36px;
   border-radius: 50%;
   background: var(--inwo-blue-3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: cover;
+  object-position: top center;
   flex-shrink: 0;
 }
 
