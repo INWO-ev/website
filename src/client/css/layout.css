@@ -72,8 +72,10 @@ body {
 
 /* Fixed site navigation, spec section 3.1 */
 .site-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   min-height: var(--nav-height);
   background: transparent;
