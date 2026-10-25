@@ -4,6 +4,7 @@ import { initScrollProgress } from './scroll-progress.js';
 import { initRevealAnimations } from './reveal-animations.js';
 import { initChatWidget } from './chat-widget.js';
 import { initThemeToggle } from './theme-toggle.js';
+import { initHeroVideo } from './hero-video.js';
 
 // Only hide/animate content once JS is confirmed working (progressive
 // enhancement, spec section 4).
@@ -15,3 +16,4 @@ initScrollProgress();
 initRevealAnimations();
 initChatWidget();
 initThemeToggle();
+initHeroVideo();

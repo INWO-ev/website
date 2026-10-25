@@ -276,12 +276,42 @@ body {
 }
 
 .section--hero {
+  position: relative;
   min-height: 100vh;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  /* Longhand (not `background` shorthand) so this poster image layers
+     under tokens.css's `[data-theme='dark'] { background: ... }` gradient
+     rule instead of being overridden by it - keep both as longhands and
+     keep this stylesheet loaded after tokens.css. */
+  background-image: url('/public/img/hero-poster.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Gradient overlay over the image/video for text readability, spec 2.3/5.1 */
+.section--hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--inwo-gradient);
+  opacity: 0.78;
+  z-index: 1;
+}
+
+.section--hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
 .section--hero__inner {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
 }
 
