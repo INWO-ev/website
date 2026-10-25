@@ -9,14 +9,13 @@ export function initThemeToggle() {
   const toggle = document.getElementById('theme-toggle');
   if (!toggle) return;
 
-  const label = toggle.querySelector('.theme-toggle__label');
-
   function apply(mode) {
     document.documentElement.setAttribute('data-color-mode', mode);
     const isLight = mode === 'light';
     toggle.setAttribute('aria-pressed', String(isLight));
-    toggle.setAttribute('aria-label', isLight ? 'Dunklen Modus aktivieren' : 'Hellen Modus aktivieren');
-    if (label) label.textContent = isLight ? 'Dunkel-Modus' : 'Hell-Modus';
+    const nextActionLabel = isLight ? 'Dunklen Modus aktivieren' : 'Hellen Modus aktivieren';
+    toggle.setAttribute('aria-label', nextActionLabel);
+    toggle.setAttribute('title', nextActionLabel);
   }
 
   apply(document.documentElement.getAttribute('data-color-mode') === 'light' ? 'light' : 'dark');

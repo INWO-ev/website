@@ -217,6 +217,11 @@
   bottom: 5.5rem;
   z-index: 1300;
   width: min(380px, calc(100vw - 2rem));
+  /* A definite height (not just max-height) is required so
+     .chat-dialog__panel's `height: 100%` resolves to something real -
+     otherwise .chat-dialog__messages has no bounded height to scroll
+     within, and scrollTop/scrollHeight in chat-widget.js have no effect. */
+  height: min(600px, calc(100vh - 7rem));
   max-height: min(600px, calc(100vh - 7rem));
 }
 

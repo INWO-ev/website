@@ -143,16 +143,29 @@ body {
 }
 
 .theme-toggle {
+  position: relative;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
   background: transparent;
-  border: 1px solid currentColor;
-  border-radius: 999px;
-  padding: 0.35rem 0.85rem;
-  font-size: 0.85rem;
+  border: none;
+  border-radius: 50%;
   color: inherit;
   cursor: pointer;
+  transition: background-color 150ms ease;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus-visible {
+  background-color: rgba(128, 139, 150, 0.2);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
 }
 
 /* Nav icon contrast tracks the section underneath, but only matters
@@ -163,17 +176,44 @@ body {
   color: var(--inwo-blue-1);
 }
 
+/* Dezentes Mond-/Sonnen-Icon: beide liegen übereinander, nur eines ist
+   per Opacity/Scale sichtbar - der Wechsel kommt allein aus dem
+   data-color-mode-Attribut auf <html>, kein JS-Icon-Austausch nötig. */
 .theme-toggle__icon {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: currentColor;
-  flex-shrink: 0;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: opacity 200ms var(--motion-easing), transform 200ms var(--motion-easing);
 }
 
-@media (max-width: 480px) {
-  .theme-toggle__label {
-    display: none;
+.theme-toggle__icon--moon {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.theme-toggle__icon--sun {
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+}
+
+:root[data-color-mode='light'] .theme-toggle__icon--moon {
+  opacity: 0;
+  transform: scale(0.5) rotate(90deg);
+}
+
+:root[data-color-mode='light'] .theme-toggle__icon--sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle__icon {
+    transition: opacity 150ms linear;
   }
 }
 
@@ -282,8 +322,8 @@ body {
   align-items: center;
   overflow: hidden;
   /* Longhand (not `background` shorthand) so this poster image layers
-     under tokens.css's `[data-theme='dark'] { background: ... }` gradient
-     rule instead of being overridden by it - keep both as longhands and
+     under tokens.css's `[data-theme='dark'] { background: ... }` rule
+     instead of being overridden by it - keep both as longhands and
      keep this stylesheet loaded after tokens.css. */
   background-image: url('/public/img/hero-poster.jpg');
   background-size: cover;

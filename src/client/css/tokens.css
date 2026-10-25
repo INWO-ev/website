@@ -14,8 +14,8 @@
   --text-on-light: #1a1f26;
   --surface: #f5f7fa;
   --surface-alt: #ffffff;
-  --surface-dark: #11161c;
-  --surface-dark-alt: #1a222c;
+  --surface-dark: #171d26;
+  --surface-dark-alt: #212a36;
 
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-heading: var(--font-body);
@@ -39,14 +39,55 @@ html {
   }
 }
 
+/* Dark-rhythm sections used to be a solid navy block (--inwo-gradient).
+   They're now the same neutral near-black as the site-wide dark mode,
+   with a thin blue edge glow (below) standing in for the old full-blue
+   fill as the visual separator between sections. */
 [data-theme='dark'] {
-  background: var(--inwo-gradient);
+  background: var(--surface-dark);
   color: var(--text-on-dark);
 }
 
 [data-theme='light'] {
   background: var(--surface);
   color: var(--text-on-light);
+}
+
+/* Thin blue edge-glow separators for dark-rhythm sections (not the hero,
+   which keeps its own video/gradient-overlay treatment). A crisp 2px
+   line sits right at the section's left/right edge; a soft radial glow
+   around it fades inward into the section's own background color. */
+[data-theme='dark']:not(.section--hero) {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-theme='dark']:not(.section--hero)::before,
+[data-theme='dark']:not(.section--hero)::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: min(22vw, 240px);
+  pointer-events: none;
+  /* Negative, not 0: a positioned z-index:0 box paints above static
+     in-flow content per the CSS stacking order, which would put this
+     glow on top of .section__inner's text. Negative keeps it behind. */
+  z-index: -1;
+}
+
+[data-theme='dark']:not(.section--hero)::before {
+  left: 0;
+  background:
+    linear-gradient(to right, var(--inwo-blue-1) 0, var(--inwo-blue-1) 2px, transparent 2px, transparent 100%),
+    radial-gradient(ellipse 140px 60% at 0% 50%, rgba(4, 81, 155, 0.35), transparent 70%);
+}
+
+[data-theme='dark']:not(.section--hero)::after {
+  right: 0;
+  background:
+    linear-gradient(to left, var(--inwo-blue-1) 0, var(--inwo-blue-1) 2px, transparent 2px, transparent 100%),
+    radial-gradient(ellipse 140px 60% at 100% 50%, rgba(4, 81, 155, 0.35), transparent 70%);
 }
 
 /* Site-wide dark/light mode toggle (in addition to the per-section
