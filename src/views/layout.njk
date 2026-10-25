@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="de">
+<html lang="de" data-color-mode="dark">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,6 +9,15 @@
   {% if description %}<meta property="og:description" content="{{ description }}" />{% endif %}
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
+  <script>
+    try {
+      if (localStorage.getItem('inwo-color-mode') === 'light') {
+        document.documentElement.setAttribute('data-color-mode', 'light');
+      }
+    } catch (e) {
+      /* localStorage unavailable (private mode, blocked storage, etc.) - dark default stays */
+    }
+  </script>
   <link rel="stylesheet" href="/assets/css/tokens.css" />
   <link rel="stylesheet" href="/assets/css/layout.css" />
   <link rel="stylesheet" href="/assets/css/components.css" />

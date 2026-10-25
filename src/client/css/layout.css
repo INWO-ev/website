@@ -7,7 +7,7 @@ body {
   font-family: var(--font-body);
   font-size: 18px;
   line-height: 1.6;
-  color: var(--text-on-light);
+  color: inherit;
 }
 
 .skip-link {
@@ -142,15 +142,39 @@ body {
   gap: 1rem;
 }
 
-.site-nav__lang {
-  display: flex;
-  gap: 0.35rem;
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
   font-size: 0.85rem;
+  color: inherit;
+  cursor: pointer;
 }
 
-.site-nav__lang a {
-  color: var(--text-on-dark);
-  text-decoration: none;
+/* Nav icon contrast tracks the section underneath, but only matters
+   when that section actually renders light (color-mode 'light'): in
+   the default dark color-mode every section ends up dark, so the icon
+   stays light regardless of the section's own data-theme. */
+:root[data-color-mode='light'] .site-nav[data-nav-theme='light'] .theme-toggle {
+  color: var(--inwo-blue-1);
+}
+
+.theme-toggle__icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .theme-toggle__label {
+    display: none;
+  }
 }
 
 @media (max-width: 900px) {
@@ -181,12 +205,8 @@ body {
   transition: background 200ms ease;
 }
 
-.site-nav[data-nav-theme='light'] .hamburger__bar {
+:root[data-color-mode='light'] .site-nav[data-nav-theme='light'] .hamburger__bar {
   background: var(--inwo-blue-1);
-}
-
-.site-nav[data-nav-theme='dark'] .hamburger__bar {
-  background: var(--text-on-dark);
 }
 
 /* Overlay menu */

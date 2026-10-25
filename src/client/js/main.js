@@ -3,6 +3,7 @@ import { initHamburgerMenu } from './hamburger-menu.js';
 import { initScrollProgress } from './scroll-progress.js';
 import { initRevealAnimations } from './reveal-animations.js';
 import { initChatWidget } from './chat-widget.js';
+import { initThemeToggle } from './theme-toggle.js';
 
 // Only hide/animate content once JS is confirmed working (progressive
 // enhancement, spec section 4).
@@ -13,3 +14,4 @@ initHamburgerMenu();
 initScrollProgress();
 initRevealAnimations();
 initChatWidget();
+initThemeToggle();

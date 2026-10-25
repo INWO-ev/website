@@ -57,6 +57,11 @@
   text-decoration-color: var(--accent);
 }
 
+:root[data-color-mode='dark'] [data-theme='light'] .link-more {
+  color: var(--text-on-dark);
+  text-decoration-color: var(--accent);
+}
+
 /* Scenes / stations shared layout */
 .scene-list,
 .station-list {
@@ -76,6 +81,10 @@
 .faq__item {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   padding: 0.75rem 0;
+}
+
+:root[data-color-mode='dark'] [data-theme='light'] .faq__item {
+  border-bottom-color: rgba(255, 255, 255, 0.15);
 }
 
 .faq__item summary {
@@ -110,6 +119,14 @@
 [data-theme='light'] .testimonial-card {
   background: var(--surface-alt);
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+:root[data-color-mode='dark'] [data-theme='light'] .theory-card,
+:root[data-color-mode='dark'] [data-theme='light'] .path-card,
+:root[data-color-mode='dark'] [data-theme='light'] .call-card,
+:root[data-color-mode='dark'] [data-theme='light'] .testimonial-card {
+  background: var(--surface-dark-alt);
+  box-shadow: none;
 }
 
 .tile {
@@ -201,8 +218,8 @@
 }
 
 .chat-dialog__panel {
-  background: var(--surface-alt);
-  color: var(--text-on-light);
+  background: var(--panel-alt);
+  color: var(--panel-text);
   border-radius: var(--radius);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -276,7 +293,7 @@
 
 .chat-message--bot {
   align-self: flex-start;
-  background: var(--surface);
+  background: var(--panel);
 }
 
 .chat-message__source {
@@ -294,8 +311,9 @@
 }
 
 .chat-chip {
-  background: var(--surface);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: var(--panel);
+  color: inherit;
+  border: 1px solid var(--panel-border);
   border-radius: 999px;
   padding: 0.35rem 0.75rem;
   font-size: 0.8rem;
@@ -312,7 +330,9 @@
   flex: 1;
   padding: 0.6rem 0.75rem;
   border-radius: var(--radius);
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--panel-border);
+  background: var(--panel);
+  color: inherit;
 }
 
 @media (max-width: 480px) {

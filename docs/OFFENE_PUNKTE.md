@@ -24,6 +24,18 @@ diese Liste.
 | 15 | Buchhaltung: selbst bauen oder bestehende Vereinssoftware anbinden | Vorstand / Kurt | nicht Teil von Phase 1 |
 | 16 | Redaktioneller Workflow: nur Admin-Oberfläche oder auch Git? | Kurt / Redaktion | nicht Teil von Phase 1 |
 
+## Nachträgliche Entscheidungen von Kurt (nach Phase-1-Review)
+
+- **DE|EN-Sprachumschalter entfernt:** Abschnitt 10.5 der Spezifikation sah
+  eine vorbereitete Mehrsprachigkeit vor; Kurt hat entschieden, darauf zu
+  verzichten (Besucher übersetzen sich die Seite selbst). Der Umschalter im
+  Menü wurde ersatzlos durch den Dark/Light-Toggle ersetzt.
+- **Seitenweiter Dark/Light-Modus ergänzt:** Zusätzlich zum abwechselnden
+  Hell/Dunkel-Rhythmus der Abschnitte (Abschnitt 2.1/5) gibt es jetzt einen
+  Umschalter im Menü, der die ganze Seite auf ein durchgehend dunkles
+  Farbschema stellt (Standard) bzw. auf das ursprüngliche helle Schema
+  zurückschaltet. Die Wahl wird per `localStorage` gemerkt.
+
 ## Weitere offene Fakten (Abschnitt 6 der Spezifikation)
 
 - Tagesgeldzinsen sind zeitgebunden und müssen vor Livegang neu geprüft werden.

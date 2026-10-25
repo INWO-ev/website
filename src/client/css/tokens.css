@@ -14,6 +14,8 @@
   --text-on-light: #1a1f26;
   --surface: #f5f7fa;
   --surface-alt: #ffffff;
+  --surface-dark: #11161c;
+  --surface-dark-alt: #1a222c;
 
   --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
   --font-heading: var(--font-body);
@@ -45,4 +47,31 @@ html {
 [data-theme='light'] {
   background: var(--surface);
   color: var(--text-on-light);
+}
+
+/* Site-wide dark/light mode toggle (in addition to the per-section
+   dark/light rhythm from spec section 2.1/5). Dark is the default: it
+   recolors the "light" sections to a dark neutral instead of white.
+   Switching to light mode restores today's original light sections. */
+:root[data-color-mode='dark'] {
+  background: var(--surface-dark);
+  color: var(--text-on-dark);
+  --panel: var(--surface-dark);
+  --panel-alt: var(--surface-dark-alt);
+  --panel-text: var(--text-on-dark);
+  --panel-border: rgba(255, 255, 255, 0.15);
+}
+
+:root[data-color-mode='dark'] [data-theme='light'] {
+  background: var(--surface-dark);
+  color: var(--text-on-dark);
+}
+
+:root[data-color-mode='light'] {
+  background: var(--surface);
+  color: var(--text-on-light);
+  --panel: var(--surface);
+  --panel-alt: var(--surface-alt);
+  --panel-text: var(--text-on-light);
+  --panel-border: rgba(0, 0, 0, 0.1);
 }
