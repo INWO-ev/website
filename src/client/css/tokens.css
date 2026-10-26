@@ -80,9 +80,10 @@ html {
   background: linear-gradient(
     to right,
     var(--inwo-blue-1) 0%,
-    var(--inwo-blue-1) 30%,
-    transparent 50%,
-    var(--inwo-blue-1) 70%,
+    var(--inwo-blue-1) 15%,
+    transparent 40%,
+    transparent 60%,
+    var(--inwo-blue-1) 85%,
     var(--inwo-blue-1) 100%
   );
 }

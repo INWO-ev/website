@@ -92,14 +92,17 @@
   font-weight: 600;
 }
 
-/* Cards: theory, path, call, testimonial, tile */
+/* Cards: theory, path, call, testimonial, tile. minmax basis is 220px
+   (not 240px) so up to 4 columns actually fit side by side starting at
+   landscape-tablet widths (~1024px), not just on wider desktop screens -
+   see the single mobile/desktop breakpoint below. */
 .theory-cards,
 .path-cards,
 .call-cards,
 .testimonial-cards,
 .tile-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.5rem;
   margin: 2rem 0;
 }
@@ -165,7 +168,7 @@
 /* Aktuell grid */
 .aktuell-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
 }
 
@@ -343,7 +346,11 @@
   color: inherit;
 }
 
-@media (max-width: 480px) {
+/* Single mobile/desktop breakpoint (matches layout.css) - no separate
+   tablet tier. Card/tile grids collapse to one column on mobile; from
+   768px up they use the auto-fit grid above, which fits up to 4 columns
+   side by side starting at landscape-tablet widths. */
+@media (max-width: 767px) {
   .chat-dialog {
     right: 0;
     bottom: 0;
@@ -355,5 +362,14 @@
   .chat-dialog__panel {
     border-radius: 0;
     height: 100vh;
+  }
+
+  .theory-cards,
+  .path-cards,
+  .call-cards,
+  .testimonial-cards,
+  .tile-grid,
+  .aktuell-grid {
+    grid-template-columns: 1fr;
   }
 }

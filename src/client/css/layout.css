@@ -217,9 +217,18 @@ body {
   }
 }
 
-@media (max-width: 900px) {
+/* Single mobile/desktop breakpoint for the whole site (matches the
+   `min-width: 768px` desktop check in hero-video.js) - no separate
+   tablet tier. A landscape tablet (~1024px) lands above this and gets
+   the full desktop layout, including the up-to-4-column card grids in
+   components.css. */
+@media (max-width: 767px) {
   .site-nav__anchors {
     display: none;
+  }
+
+  .section {
+    padding: 2.5rem 0;
   }
 }
 
@@ -411,10 +420,4 @@ body {
   text-align: center;
   font-size: 0.85rem;
   opacity: 0.8;
-}
-
-@media (max-width: 600px) {
-  .section {
-    padding: 2.5rem 0;
-  }
 }
