@@ -53,10 +53,13 @@ html {
   color: var(--text-on-light);
 }
 
-/* Thin blue edge-glow separators for dark-rhythm sections (not the hero,
-   which keeps its own video/gradient-overlay treatment). A crisp 2px
-   line sits right at the section's left/right edge; a soft radial glow
-   around it fades inward into the section's own background color. */
+/* Blue edge-glow separators for dark-rhythm sections (not the hero,
+   which keeps its own video/gradient-overlay treatment). Each side's
+   own gradient is divided roughly into thirds: a visible solid-ish
+   stripe along the first third (from the edge), fading through the
+   middle third, and fully transparent by the final third - so the
+   stripe visibly "disappears" well before reaching the section's
+   center instead of spanning all the way across. */
 [data-theme='dark']:not(.section--hero) {
   position: relative;
   overflow: hidden;
@@ -68,7 +71,7 @@ html {
   position: absolute;
   top: 0;
   bottom: 0;
-  width: min(22vw, 240px);
+  width: min(33%, 320px);
   pointer-events: none;
   /* Negative, not 0: a positioned z-index:0 box paints above static
      in-flow content per the CSS stacking order, which would put this
@@ -79,15 +82,27 @@ html {
 [data-theme='dark']:not(.section--hero)::before {
   left: 0;
   background:
-    linear-gradient(to right, var(--inwo-blue-1) 0, var(--inwo-blue-1) 2px, transparent 2px, transparent 100%),
-    radial-gradient(ellipse 140px 60% at 0% 50%, rgba(4, 81, 155, 0.35), transparent 70%);
+    linear-gradient(
+      to right,
+      rgba(4, 81, 155, 0.9) 0%,
+      rgba(4, 81, 155, 0.9) 33%,
+      rgba(4, 81, 155, 0.25) 66%,
+      rgba(4, 81, 155, 0) 100%
+    ),
+    radial-gradient(ellipse 220px 70% at 0% 50%, rgba(4, 81, 155, 0.45), transparent 70%);
 }
 
 [data-theme='dark']:not(.section--hero)::after {
   right: 0;
   background:
-    linear-gradient(to left, var(--inwo-blue-1) 0, var(--inwo-blue-1) 2px, transparent 2px, transparent 100%),
-    radial-gradient(ellipse 140px 60% at 100% 50%, rgba(4, 81, 155, 0.35), transparent 70%);
+    linear-gradient(
+      to left,
+      rgba(4, 81, 155, 0.9) 0%,
+      rgba(4, 81, 155, 0.9) 33%,
+      rgba(4, 81, 155, 0.25) 66%,
+      rgba(4, 81, 155, 0) 100%
+    ),
+    radial-gradient(ellipse 220px 70% at 100% 50%, rgba(4, 81, 155, 0.45), transparent 70%);
 }
 
 /* Site-wide dark/light mode toggle (in addition to the per-section
