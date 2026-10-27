@@ -100,11 +100,24 @@ body {
 
 .site-nav__brand {
   display: flex;
-  flex-direction: column;
-  line-height: 1.1;
+  align-items: center;
+  gap: 0.6rem;
   color: var(--text-on-dark);
   text-decoration: none;
   font-weight: 700;
+}
+
+.site-nav__brand-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.site-nav__brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
 }
 
 .site-nav__brand-main {
@@ -229,6 +242,10 @@ body {
 
   .section {
     padding: 2.5rem 0;
+  }
+
+  .section--hero__emblem {
+    display: none;
   }
 }
 
@@ -362,6 +379,20 @@ body {
   position: relative;
   z-index: 2;
   max-width: 800px;
+}
+
+/* Fairconomy emblem, rotated and placed to the side of the hero, spec 2.3 */
+.section--hero__emblem {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+  z-index: 2;
+  width: 40%;
+  min-width: 320px;
+  max-width: 620px;
+  transform: translateY(-50%) rotate(30deg);
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.35));
+  pointer-events: none;
 }
 
 .eyebrow {
