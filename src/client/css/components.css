@@ -373,3 +373,44 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Mitgliedsantrag form --- */
+.section__inner--narrow { max-width: 720px; }
+.section--form h1 { margin-bottom: 0.25rem; }
+.section--form .section__intro { margin-bottom: 2rem; }
+
+.form-message { padding: 1rem 1.25rem; border-radius: 10px; margin-bottom: 1.5rem; }
+.form-message--success { background: #e6f4ea; border: 1px solid #2e7d32; color: #1b5e20; }
+.form-message--error { background: #fdecea; border: 1px solid #c62828; color: #b71c1c; }
+
+.mitgliedsantrag-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-group { border: 0; padding: 0; margin: 0; }
+.form-group legend { font-weight: 600; margin-bottom: 0.5rem; }
+.choice { display: inline-flex; align-items: center; gap: 0.4rem; margin-right: 1.5rem; cursor: pointer; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.field { display: flex; flex-direction: column; gap: 0.35rem; }
+.field--full { grid-column: 1 / -1; }
+.field span { font-weight: 600; font-size: 0.95rem; }
+.field input,
+.field select,
+.field textarea {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid rgba(0,0,0,0.25);
+  border-radius: 8px;
+  font: inherit;
+  background: #fff;
+  color: #111;
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus { outline: 2px solid var(--inwo-accent, #e8452c); outline-offset: 1px; }
+
+.consent { display: flex; gap: 0.6rem; align-items: flex-start; }
+.consent input { margin-top: 0.25rem; }
+.consent a { text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .form-grid { grid-template-columns: 1fr; }
+}
+

@@ -22,6 +22,7 @@
     "format": "prettier --write \"src/**/*.ts\" \"tests/**/*.ts\""
   },
   "dependencies": {
+    "@fastify/formbody": "^9.0.2",
     "@fastify/static": "^10.1.7",
     "@fastify/view": "^12.0.1",
     "dotenv": "^16.4.5",

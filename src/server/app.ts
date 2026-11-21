@@ -1,5 +1,6 @@
 import path from 'node:path';
 import Fastify, { FastifyInstance } from 'fastify';
+import fastifyFormbody from '@fastify/formbody';
 import fastifyStatic from '@fastify/static';
 import fastifyView from '@fastify/view';
 import nunjucks from 'nunjucks';
@@ -7,9 +8,12 @@ import { VIEWS_DIR, CLIENT_DIR, PUBLIC_DIR } from './paths.js';
 import { registerPageRoutes } from './routes/pages.js';
 import { registerApiRoutes } from './routes/api.js';
 import { registerMiscRoutes } from './routes/misc.js';
+import { registerMembershipRoutes } from './routes/membership.js';
 
 export function buildApp(): FastifyInstance {
   const app = Fastify({ logger: false });
+
+  app.register(fastifyFormbody);
 
   app.register(fastifyView, {
     engine: { nunjucks },
@@ -38,6 +42,7 @@ export function buildApp(): FastifyInstance {
   registerPageRoutes(app);
   registerApiRoutes(app);
   registerMiscRoutes(app);
+  registerMembershipRoutes(app);
 
   return app;
 }

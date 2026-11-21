@@ -56,9 +56,9 @@
   },
   "foerdermitglied": {
     "title": "Fördermitglied werden",
-    "note": "[ENTSCHEIDUNG] Formular wird in Phase 3 an die Mitgliederverwaltung angebunden. Bis dahin führt der Button zur Kontaktseite.",
-    "ctaLabel": "Fördermitglied werden",
-    "ctaHref": "/kontakt?thema=foerdermitgliedschaft"
+    "note": "Online-Mitgliedsantrag – wir freuen uns über deine Unterstützung.",
+    "ctaLabel": "Mitgliedsantrag ausfüllen",
+    "ctaHref": "/mitgliedsantrag"
   },
   "spenden": {
     "title": "Spenden",

@@ -7,6 +7,7 @@ const STATIC_PATHS = [
   '/impressum',
   '/datenschutz',
   '/barrierefreiheit',
+  '/mitgliedsantrag',
 ];
 
 export function registerMiscRoutes(app: FastifyInstance): void {
