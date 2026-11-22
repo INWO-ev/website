@@ -39,12 +39,18 @@ MongoDB-Dokument**:
   stimmen:  { enabled, title, intro, testimonials[] },
   aktuell:  { title, events, posts, videos },
   mehr:     { title, intro, tiles[] },
-  mitmachen:{ title, intro, paths[], calls[], newsletter, foerdermitglied, spenden }
+  mitmachen:{ title, intro, paths[], calls[], newsletter, foerdermitglied, spenden },
+  events:   [ { id, titel, start, ort, link, … } ],
+  posts:    [ { id, titel, slug, teaser, veroeffentlicht_am, … } ],
+  videos:   [ { id, kanal, titel, … } ]
 }
 ```
 
 Pfade für den Editor sind Dot-Pfade mit Array-Indizes, z. B.
-`zins.scenes.0.text` oder `mitmachen.calls.2.ctaLabel`.
+`zins.scenes.0.text`, `mitmachen.calls.2.ctaLabel` oder
+`events.0.ort`. Auch die in der Aktuell-Sektion angezeigten Termine und
+Beiträge liegen damit im selben Dokument; `/api/events`, `/api/posts`
+und `/api/videos` liefern dieselben Listen aus dem Dokument.
 
 ## Erlaubte Felder
 

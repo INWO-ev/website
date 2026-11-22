@@ -1,14 +1,7 @@
-import path from 'node:path';
 import { FastifyInstance } from 'fastify';
-import { DATA_DIR } from '../paths.js';
-import { readJsonFile } from '../jsonFile.js';
 import { answerMockChat, MAX_MESSAGE_LENGTH } from '../chat.js';
 import { InMemoryRateLimiter } from '../rateLimit.js';
 import { getHomePage, updateHomePageText } from '../contentStore.js';
-
-function readSeedFile(fileName: string): unknown {
-  return readJsonFile(path.join(DATA_DIR, fileName));
-}
 
 // Spec section 8.3: rate limit chat requests per IP to limit abuse / cost.
 const chatRateLimiter = new InMemoryRateLimiter(20, 60_000);
@@ -19,15 +12,18 @@ const contentEditRateLimiter = new InMemoryRateLimiter(120, 10 * 60_000);
 
 export function registerApiRoutes(app: FastifyInstance): void {
   app.get('/api/events', async (_request, reply) => {
-    reply.send(readSeedFile('events.json'));
+    const page = await getHomePage();
+    reply.send(page.events);
   });
 
   app.get('/api/posts', async (_request, reply) => {
-    reply.send(readSeedFile('posts.json'));
+    const page = await getHomePage();
+    reply.send(page.posts);
   });
 
   app.get('/api/videos', async (_request, reply) => {
-    reply.send(readSeedFile('videos.json'));
+    const page = await getHomePage();
+    reply.send(page.videos);
   });
 
   app.get('/api/content', async (_request, reply) => {

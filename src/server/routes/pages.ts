@@ -1,8 +1,5 @@
-import path from 'node:path';
 import { FastifyInstance } from 'fastify';
 import { getHomePage } from '../contentStore.js';
-import { DATA_DIR } from '../paths.js';
-import { readJsonFile } from '../jsonFile.js';
 import { getChatDisclaimer, getSuggestedQuestions } from '../chat.js';
 
 interface NavContent {
@@ -12,10 +9,6 @@ interface NavContent {
   ctaLabel: string;
   ctaHref: string;
   overlayLinks: { label: string; href: string }[];
-}
-
-function loadJsonFile<T>(fileName: string): T {
-  return readJsonFile<T>(path.join(DATA_DIR, fileName));
 }
 
 export function registerPageRoutes(app: FastifyInstance): void {
@@ -38,9 +31,9 @@ export function registerPageRoutes(app: FastifyInstance): void {
     };
 
     const aktuellData = {
-      events: loadJsonFile('events.json'),
-      posts: loadJsonFile('posts.json'),
-      videos: loadJsonFile('videos.json'),
+      events: page.events,
+      posts: page.posts,
+      videos: page.videos,
     };
 
     return reply.view('index.njk', {

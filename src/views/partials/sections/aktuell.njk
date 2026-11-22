@@ -8,8 +8,8 @@
         <ul class="aktuell-list">
           {% for event in aktuellData.events %}
           <li>
-            <a href="{{ event.link }}">{{ event.titel }}</a>
-            <span class="aktuell-list__meta">{{ event.start }} · {{ event.ort }}</span>
+            <a href="{{ event.link }}"><span data-edit-path="events.{{ loop.index0 }}.titel" data-edit-label="Aktuell · Termin {{ loop.index }}">{{ event.titel }}</span></a>
+            <span class="aktuell-list__meta">{{ event.start }} · <span data-edit-path="events.{{ loop.index0 }}.ort" data-edit-label="Aktuell · Ort Termin {{ loop.index }}">{{ event.ort }}</span></span>
           </li>
           {% endfor %}
         </ul>
@@ -22,9 +22,9 @@
         <ul class="aktuell-list">
           {% for post in aktuellData.posts %}
           <li>
-            <a href="/blog/{{ post.slug }}">{{ post.titel }}</a>
-            <span class="aktuell-list__meta">{{ post.veroeffentlicht_am }}</span>
-            <p>{{ post.teaser }}</p>
+            <a href="/blog/{{ post.slug }}"><span data-edit-path="posts.{{ loop.index0 }}.titel" data-edit-label="Aktuell · Beitrag {{ loop.index }}">{{ post.titel }}</span></a>
+            <span class="aktuell-list__meta"><span data-edit-path="posts.{{ loop.index0 }}.veroeffentlicht_am" data-edit-label="Aktuell · Datum Beitrag {{ loop.index }}">{{ post.veroeffentlicht_am }}</span></span>
+            <p data-edit-path="posts.{{ loop.index0 }}.teaser" data-edit-label="Aktuell · Teaser Beitrag {{ loop.index }}">{{ post.teaser }}</p>
           </li>
           {% endfor %}
         </ul>

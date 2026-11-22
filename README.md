@@ -24,7 +24,7 @@ folgen in späteren Phasen (Spezifikation Abschnitt 12).
 
 - **Server:** Node.js 20, TypeScript, [Fastify](https://fastify.dev/)
 - **Templates:** serverseitig gerendert mit [Nunjucks](https://mozilla.github.io/nunjucks/) (`src/views/`) – die Seite ist ohne JavaScript lesbar
-- **Inhalte:** ein MongoDB-Dokument (`pages`, `_id: "home"`) mit allen Startseiten-Texten; `src/content/*.json` sind nur Seed und Fallback. Jeder Text ist direkt auf der Seite über ein Bleistift-Icon bearbeitbar (`PATCH /api/content`) – siehe [`docs/CONTENT.md`](docs/CONTENT.md). `data/` enthält weiterhin Seed-Daten für Events/Beiträge/Videos/Chat-Mockup
+- **Inhalte:** ein MongoDB-Dokument (`pages`, `_id: "home"`) mit allen Startseiten-Texten; `src/content/*.json` sind nur Seed und Fallback. Jeder Text ist direkt auf der Seite über ein Bleistift-Icon bearbeitbar (`PATCH /api/content`) – siehe [`docs/CONTENT.md`](docs/CONTENT.md). Auch Termine, Beiträge und Videos liegen im Seitendokument (Seed aus `data/`); `data/mock-bot.json` bleibt das Chat-Mockup
 - **Frontend:** Vanilla-CSS/JS-Module in `src/client/`, kein Framework
 - **Datenbank:** MongoDB (Docker Compose) speichert die Seiteninhalte und die Mitgliedsanträge
 - **Tests:** [Vitest](https://vitest.dev/) (`tests/`), Fastify-Routen über `app.inject()`

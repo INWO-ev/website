@@ -1,5 +1,12 @@
+import path from 'node:path';
 import { getDb } from './db.js';
 import { loadContent } from './content.js';
+import { readJsonFile } from './jsonFile.js';
+import { DATA_DIR } from './paths.js';
+
+function loadSeedData<T>(fileName: string): T {
+  return readJsonFile<T>(path.join(DATA_DIR, fileName));
+}
 
 export const PAGE_COLLECTION = 'pages';
 export const HOME_PAGE_ID = 'home';
@@ -41,6 +48,11 @@ export function buildSeedPage(): PageDocument {
     aktuell: loadContent('aktuell'),
     mehr: loadContent('mehr'),
     mitmachen: loadContent('mitmachen'),
+    // The lists shown in the "Aktuell" section are part of the page document
+    // as well, so one document really holds every text on the landing page.
+    events: loadSeedData('events.json'),
+    posts: loadSeedData('posts.json'),
+    videos: loadSeedData('videos.json'),
   };
 }
 
@@ -56,7 +68,25 @@ export async function getHomePage(): Promise<PageDocument> {
     const db = await getDb();
     const collection = db.collection<PageDocument>(PAGE_COLLECTION);
     const existing = (await collection.findOne({ _id: HOME_PAGE_ID })) as PageDocument | null;
-    if (existing) return existing;
+    if (existing) {
+      // Documents seeded before the Aktuell lists moved into the page
+      // document get them added once, without touching edited texts.
+      const missing: Record<string, unknown> = {};
+      for (const [key, fileName] of Object.entries({
+        events: 'events.json',
+        posts: 'posts.json',
+        videos: 'videos.json',
+      })) {
+        if (!Array.isArray(existing[key])) {
+          missing[key] = loadSeedData(fileName);
+        }
+      }
+      if (Object.keys(missing).length > 0) {
+        await collection.updateOne({ _id: HOME_PAGE_ID }, { $set: missing });
+        return { ...existing, ...missing };
+      }
+      return existing;
+    }
 
     const seed = buildSeedPage();
     await collection.insertOne(seed);
@@ -109,6 +139,10 @@ const EDITABLE_KEYS = new Set([
   'quelle',
   'name',
   'quote',
+  'titel',
+  'teaser',
+  'ort',
+  'veroeffentlicht_am',
 ]);
 
 const SEGMENT_RE = /^[A-Za-z0-9_-]+$/;

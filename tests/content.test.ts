@@ -29,6 +29,9 @@ describe('content document', () => {
     for (const key of SECTION_KEYS) {
       expect(seed[key], key).toBeTruthy();
     }
+    expect(Array.isArray(seed.events)).toBe(true);
+    expect(Array.isArray(seed.posts)).toBe(true);
+    expect(Array.isArray(seed.videos)).toBe(true);
   });
 
   it('resolves nested array text paths', () => {
