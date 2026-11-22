@@ -3,15 +3,15 @@
     <a class="site-nav__brand" href="/">
       <img class="site-nav__brand-logo" src="/public/img/inwo-logo.png" alt="" aria-hidden="true" width="40" height="40" />
       <span class="site-nav__brand-text">
-        <span class="site-nav__brand-main">{{ nav.brand }}</span>
-        <span class="site-nav__brand-sub">{{ nav.brandSub }}</span>
+        <span class="site-nav__brand-main" data-edit-path="nav.brand" data-edit-label="Menü · Markenname">{{ nav.brand }}</span>
+        <span class="site-nav__brand-sub" data-edit-path="nav.brandSub" data-edit-label="Menü · Marken-Untertitel">{{ nav.brandSub }}</span>
       </span>
     </a>
 
     <nav class="site-nav__anchors" aria-label="Abschnitte dieser Seite">
       <ul>
         {% for anchor in nav.anchors %}
-        <li><a href="#{{ anchor.id }}" data-anchor="{{ anchor.id }}">{{ anchor.label }}</a></li>
+        <li><a href="#{{ anchor.id }}" data-anchor="{{ anchor.id }}"><span data-edit-path="nav.anchors.{{ loop.index0 }}.label" data-edit-label="Menü · Abschnitt {{ loop.index }}">{{ anchor.label }}</span></a></li>
         {% endfor %}
       </ul>
     </nav>
@@ -40,7 +40,7 @@
           <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
         </svg>
       </button>
-      <a class="btn btn--accent site-nav__cta" href="{{ nav.ctaHref }}">{{ nav.ctaLabel }}</a>
+      <a class="btn btn--accent site-nav__cta" href="{{ nav.ctaHref }}"><span data-edit-path="nav.ctaLabel" data-edit-label="Menü · Mitmachen-Button">{{ nav.ctaLabel }}</span></a>
       <button
         type="button"
         class="hamburger"
@@ -62,7 +62,7 @@
     <button type="button" class="overlay-menu__close" id="overlay-menu-close" aria-label="Menü schließen">×</button>
     <ul>
       {% for link in nav.overlayLinks %}
-      <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+      <li><a href="{{ link.href }}"><span data-edit-path="nav.overlayLinks.{{ loop.index0 }}.label" data-edit-label="Menü · Link {{ loop.index }}">{{ link.label }}</span></a></li>
       {% endfor %}
     </ul>
   </div>

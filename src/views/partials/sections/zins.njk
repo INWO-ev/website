@@ -1,13 +1,13 @@
 <section id="zins" class="section" data-theme="{{ zins.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--up">{{ zins.title }}</h2>
-    <p class="section__intro reveal reveal--up">{{ zins.intro }}</p>
+    <h2 class="reveal reveal--up" data-edit-path="zins.title" data-edit-label="Zins · Überschrift">{{ zins.title }}</h2>
+    <p class="section__intro reveal reveal--up" data-edit-path="zins.intro" data-edit-label="Zins · Einleitung">{{ zins.intro }}</p>
 
     <ol class="scene-list">
       {% for scene in zins.scenes %}
       <li class="scene reveal reveal--up">
-        <h3>{{ scene.title }}</h3>
-        <p>{{ scene.text }}</p>
+        <h3 data-edit-path="zins.scenes.{{ loop.index0 }}.title" data-edit-label="Zins · Szenentitel {{ loop.index }}">{{ scene.title }}</h3>
+        <p data-edit-path="zins.scenes.{{ loop.index0 }}.text" data-edit-label="Zins · Szene {{ loop.index }}">{{ scene.text }}</p>
         {% if scene.fact %}
         <p class="fact-footnote">
           {{ facts[scene.fact].label }}: {{ facts[scene.fact].value }}
@@ -25,15 +25,15 @@
     </ol>
 
     <div class="faq reveal reveal--up">
-      <h3>Häufige Fragen</h3>
+      <h3 data-edit-path="zins.faqHeading" data-edit-label="Zins · Überschrift FAQ">{{ zins.faqHeading }}</h3>
       {% for item in zins.faq %}
       <details class="faq__item">
-        <summary>{{ item.question }}</summary>
-        <p>{{ item.answer }}</p>
+        <summary data-edit-path="zins.faq.{{ loop.index0 }}.question" data-edit-label="Zins · FAQ-Frage {{ loop.index }}">{{ item.question }}</summary>
+        <p data-edit-path="zins.faq.{{ loop.index0 }}.answer" data-edit-label="Zins · FAQ-Antwort {{ loop.index }}">{{ item.answer }}</p>
       </details>
       {% endfor %}
     </div>
 
-    <a class="link-more" href="{{ zins.readMore.href }}">{{ zins.readMore.label }}</a>
+    <a class="link-more" href="{{ zins.readMore.href }}"><span data-edit-path="zins.readMore.label" data-edit-label="Zins · Linktext">{{ zins.readMore.label }}</span></a>
   </div>
 </section>

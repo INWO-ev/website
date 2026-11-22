@@ -18,10 +18,28 @@
     "youtube": "[PLATZHALTER] Kanal-Link folgt"
   },
   "links": [
-    { "label": "Presse", "href": "/presse" },
-    { "label": "Impressum", "href": "/impressum" },
-    { "label": "Datenschutz", "href": "/datenschutz" },
-    { "label": "Barrierefreiheit", "href": "/barrierefreiheit" },
-    { "label": "Sitemap", "href": "/sitemap.xml" }
-  ]
+    {
+      "label": "Presse",
+      "href": "/presse"
+    },
+    {
+      "label": "Impressum",
+      "href": "/impressum"
+    },
+    {
+      "label": "Datenschutz",
+      "href": "/datenschutz"
+    },
+    {
+      "label": "Barrierefreiheit",
+      "href": "/barrierefreiheit"
+    },
+    {
+      "label": "Sitemap",
+      "href": "/sitemap.xml"
+    }
+  ],
+  "spendenLinkLabel": "Zur Spendenseite",
+  "newsletterLinkLabel": "Jetzt abonnieren",
+  "copyright": "© 2026 INWO – Initiative für Natürliche Wirtschaftsordnung"
 }

@@ -1,10 +1,10 @@
 <section id="aktuell" class="section" data-theme="{{ aktuell.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--up">{{ aktuell.title }}</h2>
+    <h2 class="reveal reveal--up" data-edit-path="aktuell.title" data-edit-label="Aktuell · Überschrift">{{ aktuell.title }}</h2>
 
     <div class="aktuell-grid">
       <div class="aktuell-col reveal reveal--up">
-        <h3>{{ aktuell.events.heading }}</h3>
+        <h3 data-edit-path="aktuell.events.heading" data-edit-label="Aktuell · Spalte Veranstaltungen">{{ aktuell.events.heading }}</h3>
         <ul class="aktuell-list">
           {% for event in aktuellData.events %}
           <li>
@@ -13,12 +13,12 @@
           </li>
           {% endfor %}
         </ul>
-        <a class="link-more" href="{{ aktuell.events.allHref }}">{{ aktuell.events.allLabel }}</a>
-        <a class="link-more" href="{{ aktuell.events.icalHref }}">Termine abonnieren (iCal)</a>
+        <a class="link-more" href="{{ aktuell.events.allHref }}"><span data-edit-path="aktuell.events.allLabel" data-edit-label="Aktuell · Link alle Termine">{{ aktuell.events.allLabel }}</span></a>
+        <a class="link-more" href="{{ aktuell.events.icalHref }}"><span data-edit-path="aktuell.events.icalLabel" data-edit-label="Aktuell · iCal-Link">{{ aktuell.events.icalLabel }}</span></a>
       </div>
 
       <div class="aktuell-col reveal reveal--up">
-        <h3>{{ aktuell.posts.heading }}</h3>
+        <h3 data-edit-path="aktuell.posts.heading" data-edit-label="Aktuell · Spalte Beiträge">{{ aktuell.posts.heading }}</h3>
         <ul class="aktuell-list">
           {% for post in aktuellData.posts %}
           <li>
@@ -28,13 +28,13 @@
           </li>
           {% endfor %}
         </ul>
-        <a class="link-more" href="{{ aktuell.posts.allHref }}">{{ aktuell.posts.allLabel }}</a>
-        <a class="link-more" href="{{ aktuell.posts.rssHref }}">Beiträge abonnieren (RSS)</a>
+        <a class="link-more" href="{{ aktuell.posts.allHref }}"><span data-edit-path="aktuell.posts.allLabel" data-edit-label="Aktuell · Link alle Beiträge">{{ aktuell.posts.allLabel }}</span></a>
+        <a class="link-more" href="{{ aktuell.posts.rssHref }}"><span data-edit-path="aktuell.posts.rssLabel" data-edit-label="Aktuell · RSS-Link">{{ aktuell.posts.rssLabel }}</span></a>
       </div>
 
       <div class="aktuell-col reveal reveal--up">
-        <h3>{{ aktuell.videos.heading }}</h3>
-        <p class="note">{{ aktuell.videos.note }}</p>
+        <h3 data-edit-path="aktuell.videos.heading" data-edit-label="Aktuell · Spalte YouTube">{{ aktuell.videos.heading }}</h3>
+        <p class="note" data-edit-path="aktuell.videos.note" data-edit-label="Aktuell · YouTube-Hinweis">{{ aktuell.videos.note }}</p>
       </div>
     </div>
   </div>

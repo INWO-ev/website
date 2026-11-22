@@ -1,0 +1,154 @@
+/* Inline content editing: a small pencil button sits next to every text
+   that carries a data-edit-path attribute. Purely additive to the design. */
+[data-edit-path] {
+  position: relative;
+}
+
+.edit-pencil {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0 0 0 0.35rem;
+  padding: 0;
+  border: 1px solid rgba(128, 138, 150, 0.45);
+  border-radius: 50%;
+  background: rgba(128, 138, 150, 0.16);
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+  vertical-align: middle;
+  opacity: 0.5;
+  transition: opacity 0.15s ease, background 0.15s ease, border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.edit-pencil:hover,
+.edit-pencil:focus-visible {
+  opacity: 1;
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  transform: scale(1.08);
+}
+
+.edit-pencil:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+.edit-pencil svg {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+a .edit-pencil,
+button .edit-pencil {
+  opacity: 0.65;
+}
+
+.editable-text {
+  white-space: pre-line;
+}
+
+.edit-dialog {
+  width: min(560px, calc(100vw - 2rem));
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius);
+  background: #1b2430;
+  color: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.edit-dialog::backdrop {
+  background: rgba(3, 8, 15, 0.7);
+  backdrop-filter: blur(2px);
+}
+
+.edit-dialog__form {
+  padding: 1.25rem;
+}
+
+.edit-dialog h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+}
+
+.edit-dialog__hint {
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  opacity: 0.72;
+}
+
+.edit-dialog textarea {
+  display: block;
+  width: 100%;
+  min-height: 9rem;
+  padding: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.4rem;
+  background: #0f1620;
+  color: #ffffff;
+  font: inherit;
+  line-height: 1.5;
+  resize: vertical;
+}
+
+.edit-dialog textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.edit-dialog__status {
+  min-height: 1.3em;
+  margin: 0.5rem 0 0;
+  color: #ffb4a8;
+  font-size: 0.85rem;
+}
+
+.edit-dialog__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-top: 0.9rem;
+}
+
+.edit-dialog__actions .btn {
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+}
+
+.edit-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 1000;
+  padding: 0.6rem 1.1rem;
+  border: 1px solid rgba(110, 220, 150, 0.45);
+  border-radius: 999px;
+  background: #10281b;
+  color: #d8ffe6;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translate(-50%, 0.5rem);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  pointer-events: none;
+}
+
+.edit-toast--visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+@media (max-width: 600px) {
+  .edit-pencil {
+    width: 1.4rem;
+    height: 1.4rem;
+    margin-left: 0.25rem;
+  }
+}

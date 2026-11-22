@@ -12,9 +12,17 @@ export async function getDb(): Promise<Db> {
   if (db) return db;
 
   const uri = getMongoUri();
-  client = new MongoClient(uri, { serverSelectionTimeoutMS: 5000 });
-  await client.connect();
-  db = client.db();
+  const candidate = new MongoClient(uri, { serverSelectionTimeoutMS: 5000 });
+
+  try {
+    await candidate.connect();
+  } catch (error) {
+    await candidate.close().catch(() => undefined);
+    throw error;
+  }
+
+  client = candidate;
+  db = candidate.db();
   return db;
 }
 

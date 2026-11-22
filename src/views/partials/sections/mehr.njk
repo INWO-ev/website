@@ -1,13 +1,13 @@
 <section id="mehr" class="section" data-theme="{{ mehr.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--up">{{ mehr.title }}</h2>
-    <p class="section__intro reveal reveal--up">{{ mehr.intro }}</p>
+    <h2 class="reveal reveal--up" data-edit-path="mehr.title" data-edit-label="Mehr · Überschrift">{{ mehr.title }}</h2>
+    <p class="section__intro reveal reveal--up" data-edit-path="mehr.intro" data-edit-label="Mehr · Einleitung">{{ mehr.intro }}</p>
 
     <div class="tile-grid">
       {% for tile in mehr.tiles %}
       <a class="tile reveal reveal--up" href="{{ tile.href }}">
-        <h3>{{ tile.title }}</h3>
-        <p>{{ tile.text }}</p>
+        <h3 data-edit-path="mehr.tiles.{{ loop.index0 }}.title" data-edit-label="Mehr · Kachel {{ loop.index }}" data-edit-chip="inside">{{ tile.title }}</h3>
+        <p data-edit-path="mehr.tiles.{{ loop.index0 }}.text" data-edit-label="Mehr · Kachel {{ loop.index }} Text" data-edit-chip="inside">{{ tile.text }}</p>
       </a>
       {% endfor %}
     </div>

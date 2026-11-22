@@ -1,30 +1,30 @@
 <footer class="site-footer" data-theme="dark">
   <div class="site-footer__inner">
     <div class="site-footer__col">
-      <h2>{{ footer.contact.heading }}</h2>
-      <p>{{ footer.contact.email }}</p>
-      <p>{{ footer.contact.note }}</p>
+      <h2 data-edit-path="footer.contact.heading" data-edit-label="Footer · Kontakt-Überschrift">{{ footer.contact.heading }}</h2>
+      <p data-edit-path="footer.contact.email" data-edit-label="Footer · E-Mail">{{ footer.contact.email }}</p>
+      <p data-edit-path="footer.contact.note" data-edit-label="Footer · Kontakt-Hinweis">{{ footer.contact.note }}</p>
     </div>
     <div class="site-footer__col">
-      <h2>{{ footer.spenden.heading }}</h2>
-      <p>{{ footer.spenden.iban }}</p>
-      <a href="{{ footer.spenden.href }}">Zur Spendenseite</a>
+      <h2 data-edit-path="footer.spenden.heading" data-edit-label="Footer · Spenden-Überschrift">{{ footer.spenden.heading }}</h2>
+      <p data-edit-path="footer.spenden.iban" data-edit-label="Footer · IBAN">{{ footer.spenden.iban }}</p>
+      <a href="{{ footer.spenden.href }}"><span data-edit-path="footer.spendenLinkLabel" data-edit-label="Footer · Spenden-Link">{{ footer.spendenLinkLabel }}</span></a>
     </div>
     <div class="site-footer__col">
-      <h2>{{ footer.newsletter.heading }}</h2>
-      <a href="{{ footer.newsletter.href }}">Jetzt abonnieren</a>
+      <h2 data-edit-path="footer.newsletter.heading" data-edit-label="Footer · Newsletter-Überschrift">{{ footer.newsletter.heading }}</h2>
+      <a href="{{ footer.newsletter.href }}"><span data-edit-path="footer.newsletterLinkLabel" data-edit-label="Footer · Newsletter-Link">{{ footer.newsletterLinkLabel }}</span></a>
     </div>
     <div class="site-footer__col">
-      <h2>{{ footer.social.heading }}</h2>
-      <p>{{ footer.social.youtube }}</p>
+      <h2 data-edit-path="footer.social.heading" data-edit-label="Footer · Social-Überschrift">{{ footer.social.heading }}</h2>
+      <p data-edit-path="footer.social.youtube" data-edit-label="Footer · YouTube">{{ footer.social.youtube }}</p>
     </div>
   </div>
   <nav class="site-footer__links" aria-label="Rechtliches und weitere Seiten">
     <ul>
       {% for link in footer.links %}
-      <li><a href="{{ link.href }}">{{ link.label }}</a></li>
+      <li><a href="{{ link.href }}"><span data-edit-path="footer.links.{{ loop.index0 }}.label" data-edit-label="Footer · Link {{ loop.index }}">{{ link.label }}</span></a></li>
       {% endfor %}
     </ul>
   </nav>
-  <p class="site-footer__copyright">&copy; 2026 INWO – Initiative für Natürliche Wirtschaftsordnung</p>
+  <p class="site-footer__copyright" data-edit-path="footer.copyright" data-edit-label="Footer · Copyright">{{ footer.copyright }}</p>
 </footer>

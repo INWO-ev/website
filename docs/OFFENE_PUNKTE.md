@@ -23,6 +23,18 @@ diese Liste.
 | 14 | Newsletter-/Mailversand: eigener Server oder Dienstleister (AVV) | Kurt | Formular vorhanden, kein Versand implementiert (Phase 2) |
 | 15 | Buchhaltung: selbst bauen oder bestehende Vereinssoftware anbinden | Vorstand / Kurt | nicht Teil von Phase 1 |
 | 16 | Redaktioneller Workflow: nur Admin-Oberfläche oder auch Git? | Kurt / Redaktion | nicht Teil von Phase 1 |
+| 17 | Inhalte direkt auf der Seite bearbeiten (Bleistift-Icon, ein MongoDB-Dokument) | Kurt | umgesetzt; Bearbeiten ist bewusst noch **ohne Login** für alle offen (siehe `docs/CONTENT.md`). UserManagement/Schreibrechte folgen. |
+
+## Inhaltsverwaltung (Zwischenstand)
+
+- **Ein Dokument für alle Texte:** Die komplette Startseite wird aus
+  `pages/_id: "home"` gelesen und bei jedem Aufruf neu gerendert.
+- **Offenes Bearbeiten:** Jeder Text hat ein kleines Bleistift-Icon;
+  Speichern geht über `PATCH /api/content`. Eine Anmeldung gibt es in
+  dieser Phase nicht (so von Kurt gewünscht). Missbrauch wird nur durch
+  ein Rate-Limit (120 Änderungen / IP / 10 Minuten) gebremst.
+- **Nächster Schritt:** `PATCH /api/content` hinter das geplante
+  UserManagement legen (Rollen Editor/Admin).
 
 ## Nachträgliche Entscheidungen von Kurt (nach Phase-1-Review)
 

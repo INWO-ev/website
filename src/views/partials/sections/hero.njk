@@ -2,13 +2,13 @@
   <img class="section--hero__emblem" src="/public/img/fairconomy-emblem.png" alt="" aria-hidden="true" />
 
   <div class="section__inner section--hero__inner reveal reveal--fade">
-    <p class="eyebrow">Fairconomy</p>
-    <h1>{{ hero.headline }}</h1>
-    <p class="section--hero__subline">{{ hero.subline }}</p>
-    <p class="section--hero__intro">{{ hero.intro }}</p>
+    <p class="eyebrow" data-edit-path="hero.eyebrow" data-edit-label="Hero · Kicker">{{ hero.eyebrow }}</p>
+    <h1 data-edit-path="hero.headline" data-edit-label="Hero · Überschrift">{{ hero.headline }}</h1>
+    <p class="section--hero__subline" data-edit-path="hero.subline" data-edit-label="Hero · Unterzeile">{{ hero.subline }}</p>
+    <p class="section--hero__intro" data-edit-path="hero.intro" data-edit-label="Hero · Einleitung">{{ hero.intro }}</p>
     <div class="cta-group">
-      <a class="btn btn--accent btn--lg" href="{{ hero.primaryCta.href }}">{{ hero.primaryCta.label }}</a>
-      <a class="btn btn--ghost btn--lg" href="{{ hero.secondaryCta.href }}">{{ hero.secondaryCta.label }}</a>
+      <a class="btn btn--accent btn--lg" href="{{ hero.primaryCta.href }}"><span data-edit-path="hero.primaryCta.label" data-edit-label="Hero · Haupt-Button">{{ hero.primaryCta.label }}</span></a>
+      <a class="btn btn--ghost btn--lg" href="{{ hero.secondaryCta.href }}"><span data-edit-path="hero.secondaryCta.label" data-edit-label="Hero · Zweiter Button">{{ hero.secondaryCta.label }}</span></a>
     </div>
   </div>
 </section>

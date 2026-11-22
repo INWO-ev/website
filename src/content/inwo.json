@@ -7,7 +7,8 @@
     "status": "entscheidung-offen",
     "label": "Film ansehen",
     "note": "[ENTSCHEIDUNG] Pitch-Video (60–90s) startet erst per Klick, mit Untertiteln. Hosting (selbst gehostet oder YouTube Zwei-Klick-Lösung) und Drehbuch stehen noch aus.",
-    "transcriptHref": "/transkripte/pitch-video"
+    "transcriptHref": "/transkripte/pitch-video",
+    "transcriptLabel": "Transkript lesen"
   },
   "theories": [
     {

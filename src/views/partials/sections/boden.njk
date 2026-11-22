@@ -1,19 +1,19 @@
 <section id="boden" class="section" data-theme="{{ boden.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--left">{{ boden.title }}</h2>
-    <p class="section__intro reveal reveal--left">{{ boden.intro }}</p>
-    <p class="note">{{ boden.statusNote }}</p>
+    <h2 class="reveal reveal--left" data-edit-path="boden.title" data-edit-label="Boden · Überschrift">{{ boden.title }}</h2>
+    <p class="section__intro reveal reveal--left" data-edit-path="boden.intro" data-edit-label="Boden · Einleitung">{{ boden.intro }}</p>
+    <p class="note" data-edit-path="boden.statusNote" data-edit-label="Boden · Redaktionshinweis">{{ boden.statusNote }}</p>
 
     <ol class="scene-list">
       {% for scene in boden.scenes %}
       <li class="scene reveal reveal--left">
-        <h3>{{ scene.title }}</h3>
-        <p>{{ scene.text }}</p>
+        <h3 data-edit-path="boden.scenes.{{ loop.index0 }}.title" data-edit-label="Boden · Szenentitel {{ loop.index }}">{{ scene.title }}</h3>
+        <p data-edit-path="boden.scenes.{{ loop.index0 }}.text" data-edit-label="Boden · Szene {{ loop.index }}">{{ scene.text }}</p>
       </li>
       {% endfor %}
     </ol>
 
-    <a class="link-more" href="{{ boden.readMore.href }}">{{ boden.readMore.label }}</a>
-    <p class="call-ref"><a href="{{ boden.callRef.href }}">{{ boden.callRef.label }}</a></p>
+    <a class="link-more" href="{{ boden.readMore.href }}"><span data-edit-path="boden.readMore.label" data-edit-label="Boden · Linktext">{{ boden.readMore.label }}</span></a>
+    <p class="call-ref"><a href="{{ boden.callRef.href }}"><span data-edit-path="boden.callRef.label" data-edit-label="Boden · Aufruf-Verweis">{{ boden.callRef.label }}</span></a></p>
   </div>
 </section>

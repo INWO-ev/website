@@ -15,16 +15,18 @@ Entscheidungen und Annahmen der Umsetzung stehen in
 **Phase 1** (Landingpage-Prototyp) ist umgesetzt: die One-Page-Startseite
 mit allen Abschnitten aus Spezifikation 5.1–5.9, fixiertem Menü,
 Scroll-Fortschrittsstreifen, Reveal-Animationen und dem Gesell-Bot-Mockup.
-Admin-Oberfläche, Mitgliederverwaltung und echtes RAG folgen in späteren
-Phasen (Spezifikation Abschnitt 12).
+Die Landingpage-Texte sind inzwischen ohne Login direkt auf der Seite
+bearbeitbar (Bleistift-Icon, ein MongoDB-Dokument als Quelle).
+Admin-Oberfläche mit UserManagement, Mitgliederverwaltung und echtes RAG
+folgen in späteren Phasen (Spezifikation Abschnitt 12).
 
 ## Architektur
 
 - **Server:** Node.js 20, TypeScript, [Fastify](https://fastify.dev/)
 - **Templates:** serverseitig gerendert mit [Nunjucks](https://mozilla.github.io/nunjucks/) (`src/views/`) – die Seite ist ohne JavaScript lesbar
-- **Inhalte:** versionierte JSON-Dateien in `src/content/` (Startseiten-Texte) und `data/` (Seed-Daten für Events/Beiträge/Videos/Chat-Mockup)
+- **Inhalte:** ein MongoDB-Dokument (`pages`, `_id: "home"`) mit allen Startseiten-Texten; `src/content/*.json` sind nur Seed und Fallback. Jeder Text ist direkt auf der Seite über ein Bleistift-Icon bearbeitbar (`PATCH /api/content`) – siehe [`docs/CONTENT.md`](docs/CONTENT.md). `data/` enthält weiterhin Seed-Daten für Events/Beiträge/Videos/Chat-Mockup
 - **Frontend:** Vanilla-CSS/JS-Module in `src/client/`, kein Framework
-- **Datenbank:** MongoDB ist über Docker Compose vorbereitet (Treiber in `package.json`), wird in Phase 1 aber noch nicht für Inhalte benötigt
+- **Datenbank:** MongoDB (Docker Compose) speichert die Seiteninhalte und die Mitgliedsanträge
 - **Tests:** [Vitest](https://vitest.dev/) (`tests/`), Fastify-Routen über `app.inject()`
 
 ## Setup

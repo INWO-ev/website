@@ -1,13 +1,13 @@
 {% if stimmen.enabled %}
 <section id="stimmen" class="section" data-theme="{{ stimmen.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--up">{{ stimmen.title }}</h2>
-    <p class="section__intro reveal reveal--up">{{ stimmen.intro }}</p>
+    <h2 class="reveal reveal--up" data-edit-path="stimmen.title" data-edit-label="Stimmen · Überschrift">{{ stimmen.title }}</h2>
+    <p class="section__intro reveal reveal--up" data-edit-path="stimmen.intro" data-edit-label="Stimmen · Einleitung">{{ stimmen.intro }}</p>
     <div class="testimonial-cards">
       {% for testimonial in stimmen.testimonials %}
       <article class="testimonial-card reveal reveal--up">
-        <p>{{ testimonial.quote }}</p>
-        <p class="testimonial-card__name">{{ testimonial.name }}</p>
+        <p data-edit-path="stimmen.testimonials.{{ loop.index0 }}.quote" data-edit-label="Stimmen · Zitat {{ loop.index }}">{{ testimonial.quote }}</p>
+        <p class="testimonial-card__name" data-edit-path="stimmen.testimonials.{{ loop.index0 }}.name" data-edit-label="Stimmen · Name {{ loop.index }}">{{ testimonial.name }}</p>
       </article>
       {% endfor %}
     </div>

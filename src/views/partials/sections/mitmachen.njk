@@ -1,14 +1,14 @@
 <section id="mitmachen" class="section" data-theme="{{ mitmachen.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--up">{{ mitmachen.title }}</h2>
-    <p class="section__intro reveal reveal--up">{{ mitmachen.intro }}</p>
+    <h2 class="reveal reveal--up" data-edit-path="mitmachen.title" data-edit-label="Mitmachen · Überschrift">{{ mitmachen.title }}</h2>
+    <p class="section__intro reveal reveal--up" data-edit-path="mitmachen.intro" data-edit-label="Mitmachen · Einleitung">{{ mitmachen.intro }}</p>
 
     <div class="path-cards">
       {% for path in mitmachen.paths %}
       <article class="path-card reveal reveal--up">
-        <h3>{{ path.title }}</h3>
-        <p>{{ path.text }}</p>
-        <a class="btn btn--ghost" href="{{ path.cta.href }}">{{ path.cta.label }}</a>
+        <h3 data-edit-path="mitmachen.paths.{{ loop.index0 }}.title" data-edit-label="Mitmachen · Weg {{ loop.index }}">{{ path.title }}</h3>
+        <p data-edit-path="mitmachen.paths.{{ loop.index0 }}.text" data-edit-label="Mitmachen · Weg {{ loop.index }} Text">{{ path.text }}</p>
+        <a class="btn btn--ghost" href="{{ path.cta.href }}"><span data-edit-path="mitmachen.paths.{{ loop.index0 }}.cta.label" data-edit-label="Mitmachen · Weg {{ loop.index }} Button">{{ path.cta.label }}</span></a>
       </article>
       {% endfor %}
     </div>
@@ -16,32 +16,32 @@
     <div class="call-cards">
       {% for call in mitmachen.calls %}
       <article class="call-card reveal reveal--up">
-        <h3>{{ call.title }}</h3>
-        <p>{{ call.text }}</p>
-        <button type="button" class="btn btn--accent" disabled>{{ call.ctaLabel }}</button>
+        <h3 data-edit-path="mitmachen.calls.{{ loop.index0 }}.title" data-edit-label="Mitmachen · Aufruf {{ loop.index }}">{{ call.title }}</h3>
+        <p data-edit-path="mitmachen.calls.{{ loop.index0 }}.text" data-edit-label="Mitmachen · Aufruf {{ loop.index }} Text">{{ call.text }}</p>
+        <button type="button" class="btn btn--accent" disabled><span data-edit-path="mitmachen.calls.{{ loop.index0 }}.ctaLabel" data-edit-label="Mitmachen · Aufruf {{ loop.index }} Button">{{ call.ctaLabel }}</span></button>
       </article>
       {% endfor %}
     </div>
 
     <div class="mitmachen-forms">
       <form class="newsletter-form reveal reveal--up" id="newsletter-form">
-        <h3>{{ mitmachen.newsletter.title }}</h3>
-        <p class="note note--on-dark">{{ mitmachen.newsletter.note }}</p>
+        <h3 data-edit-path="mitmachen.newsletter.title" data-edit-label="Mitmachen · Newsletter-Überschrift">{{ mitmachen.newsletter.title }}</h3>
+        <p class="note note--on-dark" data-edit-path="mitmachen.newsletter.note" data-edit-label="Mitmachen · Newsletter-Hinweis">{{ mitmachen.newsletter.note }}</p>
         <label class="sr-only" for="newsletter-email">E-Mail-Adresse</label>
         <input type="email" id="newsletter-email" name="email" required placeholder="{{ mitmachen.newsletter.placeholder }}" />
-        <button type="submit" class="btn btn--accent">{{ mitmachen.newsletter.submitLabel }}</button>
+        <button type="submit" class="btn btn--accent"><span data-edit-path="mitmachen.newsletter.submitLabel" data-edit-label="Mitmachen · Newsletter-Button">{{ mitmachen.newsletter.submitLabel }}</span></button>
       </form>
 
       <div class="foerdermitglied reveal reveal--up">
-        <h3>{{ mitmachen.foerdermitglied.title }}</h3>
-        <p class="note note--on-dark">{{ mitmachen.foerdermitglied.note }}</p>
-        <a class="btn btn--ghost" href="{{ mitmachen.foerdermitglied.ctaHref }}">{{ mitmachen.foerdermitglied.ctaLabel }}</a>
+        <h3 data-edit-path="mitmachen.foerdermitglied.title" data-edit-label="Mitmachen · Fördermitglied-Überschrift">{{ mitmachen.foerdermitglied.title }}</h3>
+        <p class="note note--on-dark" data-edit-path="mitmachen.foerdermitglied.note" data-edit-label="Mitmachen · Fördermitglied-Hinweis">{{ mitmachen.foerdermitglied.note }}</p>
+        <a class="btn btn--ghost" href="{{ mitmachen.foerdermitglied.ctaHref }}"><span data-edit-path="mitmachen.foerdermitglied.ctaLabel" data-edit-label="Mitmachen · Fördermitglied-Button">{{ mitmachen.foerdermitglied.ctaLabel }}</span></a>
       </div>
 
       <div class="spenden-hinweis reveal reveal--up">
-        <h3>{{ mitmachen.spenden.title }}</h3>
-        <p class="note note--on-dark">{{ mitmachen.spenden.note }}</p>
-        <a class="btn btn--ghost" href="{{ mitmachen.spenden.ctaHref }}">{{ mitmachen.spenden.ctaLabel }}</a>
+        <h3 data-edit-path="mitmachen.spenden.title" data-edit-label="Mitmachen · Spenden-Überschrift">{{ mitmachen.spenden.title }}</h3>
+        <p class="note note--on-dark" data-edit-path="mitmachen.spenden.note" data-edit-label="Mitmachen · Spenden-Hinweis">{{ mitmachen.spenden.note }}</p>
+        <a class="btn btn--ghost" href="{{ mitmachen.spenden.ctaHref }}"><span data-edit-path="mitmachen.spenden.ctaLabel" data-edit-label="Mitmachen · Spenden-Button">{{ mitmachen.spenden.ctaLabel }}</span></a>
       </div>
     </div>
   </div>

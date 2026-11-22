@@ -5,6 +5,7 @@ import { initRevealAnimations } from './reveal-animations.js';
 import { initChatWidget } from './chat-widget.js';
 import { initThemeToggle } from './theme-toggle.js';
 import { initHeroVideo } from './hero-video.js';
+import { initContentEditor } from './content-editor.js';
 
 // Only hide/animate content once JS is confirmed working (progressive
 // enhancement, spec section 4).
@@ -17,3 +18,4 @@ initRevealAnimations();
 initChatWidget();
 initThemeToggle();
 initHeroVideo();
+initContentEditor();

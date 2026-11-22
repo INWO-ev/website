@@ -1,24 +1,24 @@
 <section id="zukunft" class="section" data-theme="{{ zukunft.theme }}">
   <div class="section__inner">
-    <h2 class="reveal reveal--fade">{{ zukunft.title }}</h2>
-    <p class="section__intro reveal reveal--fade">{{ zukunft.intro }}</p>
+    <h2 class="reveal reveal--fade" data-edit-path="zukunft.title" data-edit-label="Zukunft · Überschrift">{{ zukunft.title }}</h2>
+    <p class="section__intro reveal reveal--fade" data-edit-path="zukunft.intro" data-edit-label="Zukunft · Einleitung">{{ zukunft.intro }}</p>
 
     <ol class="station-list">
       {% for station in zukunft.stations %}
       <li class="station reveal reveal--fade">
-        <h3>{{ station.title }}</h3>
-        <p>{{ station.text }}</p>
-        <a class="link-more" href="{{ station.link.href }}">{{ station.link.label }}</a>
+        <h3 data-edit-path="zukunft.stations.{{ loop.index0 }}.title" data-edit-label="Zukunft · Station {{ loop.index }}">{{ station.title }}</h3>
+        <p data-edit-path="zukunft.stations.{{ loop.index0 }}.text" data-edit-label="Zukunft · Station {{ loop.index }} Text">{{ station.text }}</p>
+        <a class="link-more" href="{{ station.link.href }}"><span data-edit-path="zukunft.stations.{{ loop.index0 }}.link.label" data-edit-label="Zukunft · Linktext {{ loop.index }}">{{ station.link.label }}</span></a>
       </li>
       {% endfor %}
     </ol>
 
     <div class="station-schluss reveal reveal--fade">
-      <h3>{{ zukunft.schluss.title }}</h3>
-      <p>{{ zukunft.schluss.text }}</p>
-      <a class="btn btn--accent" href="{{ zukunft.schluss.cta.href }}">{{ zukunft.schluss.cta.label }}</a>
+      <h3 data-edit-path="zukunft.schluss.title" data-edit-label="Zukunft · Schluss-Überschrift">{{ zukunft.schluss.title }}</h3>
+      <p data-edit-path="zukunft.schluss.text" data-edit-label="Zukunft · Schlusstext">{{ zukunft.schluss.text }}</p>
+      <a class="btn btn--accent" href="{{ zukunft.schluss.cta.href }}"><span data-edit-path="zukunft.schluss.cta.label" data-edit-label="Zukunft · Button">{{ zukunft.schluss.cta.label }}</span></a>
     </div>
 
-    <p class="note">{{ zukunft.sourceNote }}</p>
+    <p class="note" data-edit-path="zukunft.sourceNote" data-edit-label="Zukunft · Quellenhinweis">{{ zukunft.sourceNote }}</p>
   </div>
 </section>

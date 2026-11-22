@@ -1,9 +1,16 @@
 {
   "theme": "dark",
   "status": "entwurf",
+  "eyebrow": "Fairconomy",
   "headline": "Eine freie Welt mit Fairconomy",
   "subline": "einfach – wirksam – gerecht",
   "intro": "[TEXT FOLGT] Die INWO setzt sich für eine Geld- und Bodenordnung ein, die niemanden benachteiligt – getragen von Menschen, die Theorie und Praxis von Silvio Gesell weiterdenken. Finale Fassung liefert die INWO.",
-  "primaryCta": { "label": "Mitmachen", "href": "#mitmachen" },
-  "secondaryCta": { "label": "Mehr erfahren", "href": "#zins" }
+  "primaryCta": {
+    "label": "Mitmachen",
+    "href": "#mitmachen"
+  },
+  "secondaryCta": {
+    "label": "Mehr erfahren",
+    "href": "#zins"
+  }
 }

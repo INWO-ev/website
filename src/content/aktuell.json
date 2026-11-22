@@ -5,13 +5,15 @@
     "heading": "Veranstaltungen",
     "allLabel": "Alle Termine",
     "allHref": "/veranstaltungen",
-    "icalHref": "/veranstaltungen.ics"
+    "icalHref": "/veranstaltungen.ics",
+    "icalLabel": "Termine abonnieren (iCal)"
   },
   "posts": {
     "heading": "Neueste Beiträge",
     "allLabel": "Alle Beiträge",
     "allHref": "/blog",
-    "rssHref": "/blog/feed.xml"
+    "rssHref": "/blog/feed.xml",
+    "rssLabel": "Beiträge abonnieren (RSS)"
   },
   "videos": {
     "heading": "YouTube",

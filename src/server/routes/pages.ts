@@ -1,6 +1,6 @@
 import path from 'node:path';
 import { FastifyInstance } from 'fastify';
-import { loadContent } from '../content.js';
+import { getHomePage } from '../contentStore.js';
 import { DATA_DIR } from '../paths.js';
 import { readJsonFile } from '../jsonFile.js';
 import { getChatDisclaimer, getSuggestedQuestions } from '../chat.js';
@@ -20,20 +20,21 @@ function loadJsonFile<T>(fileName: string): T {
 
 export function registerPageRoutes(app: FastifyInstance): void {
   app.get('/', async (_request, reply) => {
-    const nav = loadContent<NavContent>('nav');
-    const footer = loadContent('footer');
-    const facts = loadContent('facts');
+    // The whole page content is one MongoDB document; it is read on every
+    // request so edits are visible immediately without a restart.
+    const page = await getHomePage();
+    const nav = page.nav as NavContent;
 
     const sections = {
-      hero: loadContent('hero'),
-      zins: loadContent('zins'),
-      boden: loadContent('boden'),
-      zukunft: loadContent('zukunft'),
-      inwo: loadContent('inwo'),
-      stimmen: loadContent('stimmen'),
-      aktuell: loadContent('aktuell'),
-      mehr: loadContent('mehr'),
-      mitmachen: loadContent('mitmachen'),
+      hero: page.hero,
+      zins: page.zins,
+      boden: page.boden,
+      zukunft: page.zukunft,
+      inwo: page.inwo,
+      stimmen: page.stimmen,
+      aktuell: page.aktuell,
+      mehr: page.mehr,
+      mitmachen: page.mitmachen,
     };
 
     const aktuellData = {
@@ -43,12 +44,11 @@ export function registerPageRoutes(app: FastifyInstance): void {
     };
 
     return reply.view('index.njk', {
-      title: 'Fairconomy – INWO',
-      description:
-        'Fairconomy: die INWO setzt sich für eine faire Geld- und Bodenordnung ein – einfach, wirksam, gerecht.',
+      title: page.title,
+      description: page.description,
       nav,
-      footer,
-      facts,
+      footer: page.footer,
+      facts: page.facts,
       sections,
       aktuellData,
       chat: {
@@ -64,9 +64,8 @@ export function registerPageRoutes(app: FastifyInstance): void {
     title: string,
   ): void => {
     app.get(routePath, async (_request, reply) => {
-      const nav = loadContent('nav');
-      const footer = loadContent('footer');
-      return reply.view(templateName, { title, nav, footer });
+      const page = await getHomePage();
+      return reply.view(templateName, { title, nav: page.nav, footer: page.footer });
     });
   };
 
