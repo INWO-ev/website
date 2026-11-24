@@ -28,7 +28,7 @@ MongoDB-Dokument**:
   _id: "home",
   title, description,          // Seitentitel & Meta-Description
   updatedAt,
-  nav:      { brand, brandSub, anchors[], ctaLabel, overlayLinks[] },
+  nav:      { brand, brandSub, anchors[], ctaLabel, blogLabel, blogHref, overlayLinks[] },
   footer:   { contact{}, spenden{}, newsletter{}, social{}, links[], … },
   facts:    { … },             // Quellenangaben zu Statistiken
   hero:     { eyebrow, headline, subline, intro, primaryCta, secondaryCta },

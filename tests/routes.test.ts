@@ -19,6 +19,7 @@ describe('page routes', () => {
     for (const anchor of ['start', 'zins', 'boden', 'zukunft', 'inwo', 'aktuell', 'mehr', 'mitmachen']) {
       expect(response.body).toContain(`id="${anchor}"`);
     }
+    expect(response.body).toContain('https://inwo.de/aktuelles/inwo-blog.html');
   });
 
   it('GET / hides the testimonials section when disabled', async () => {

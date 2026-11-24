@@ -142,6 +142,7 @@ const EDITABLE_KEYS = new Set([
   'titel',
   'teaser',
   'ort',
+  'blogLabel',
   'veroeffentlicht_am',
 ]);
 
